@@ -41,6 +41,7 @@
     body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.9; font-size: 15px; overflow-x: hidden; font-weight: 400; -webkit-text-size-adjust: 100%; }
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; }
+    br.pc { display: inline; }
 
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 48px; }
     .container--narrow { max-width: var(--max-w-narrow); margin: 0 auto; padding: 0 48px; }
@@ -106,7 +107,7 @@
       display: flex; align-items: center; overflow: hidden;
     }
     .hero__bg { position: absolute; inset: 0; z-index: 0; }
-    .hero__bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
     .hero__overlay {
       position: absolute; inset: 0; z-index: 1;
       background: linear-gradient(170deg, rgba(10,10,10,.88) 0%, rgba(10,10,10,.72) 50%, rgba(10,10,10,.6) 100%);
@@ -325,6 +326,7 @@
       .hero h1 { font-size: 28px; line-height: 1.55; }
       .hero__stats { display: none; }
       .hero__stats-mobile { display: block; }
+      br.pc { display: none; }
       .hero .btn-group { flex-direction: column; }
       .hero .btn { width: 100%; padding: 16px; }
 
@@ -456,8 +458,8 @@
       <div class="hero__content">
         <div class="hero__text">
           <p class="hero__label">Structural Redesign for Local Business</p>
-          <h1>事業が止まる原因は、<br>人でも戦略でもない。</h1>
-          <p class="hero__sub">企業経営の「今後」を安心させる。<br>地方企業のための、構造再設計。</p>
+          <h1>事業が止まる原因は、<br class="pc">人でも戦略でもない。</h1>
+          <p class="hero__sub">企業経営の「今後」を安心させる。<br class="pc">地方企業のための、構造再設計。</p>
           <div class="hero__tags">
             <span class="hero__tag">事業と業務構造の再設計</span>
             <span class="hero__tag">実行伴走・成果重視</span>
@@ -516,7 +518,7 @@
   <section class="section" id="problem">
     <div class="container">
       <p class="section-label">Problem</p>
-      <h2 class="section-headline">地方には、努力が報われない<br>会社が多すぎる。</h2>
+      <h2 class="section-headline">地方には、努力が報われない<br class="pc">会社が多すぎる。</h2>
       <div class="problem__grid">
         <div class="problem__body">
           <p>良い商品がある。真面目に働いている。地域に必要とされている。</p>
@@ -540,7 +542,7 @@
     <div class="container">
       <div class="philosophy__inner">
         <p class="section-label">Philosophy</p>
-        <h2 class="section-headline">私たちは、人を増やす前に、<br>構造を変える。</h2>
+        <h2 class="section-headline">私たちは、人を増やす前に、<br class="pc">構造を変える。</h2>
         <div class="philosophy__lines">
           <p>人が足りないのではない。</p>
           <p>能力がないのでもない。</p>
@@ -562,7 +564,7 @@
   <section class="section section--alt" id="axes">
     <div class="container">
       <p class="section-label">Framework</p>
-      <h2 class="section-headline">勝ち方と、あり方。<br>どちらが欠けても会社は止まる。</h2>
+      <h2 class="section-headline">勝ち方と、あり方。<br class="pc">どちらが欠けても会社は止まる。</h2>
       <div class="axes__grid">
         <div class="axes__col axes__col--win">
           <p class="axes__col-label">Structure</p>
@@ -586,9 +588,9 @@
       <h2 class="section-headline">AIKASUがやっていること</h2>
       <p class="section-sub">思想だけでは変わらない。手を動かし、成果が出る形に整える。</p>
       <div class="services__grid">
-        <div class="services__card"><div class="services__card-num">01</div><h3 class="services__card-title">事業・業務構造の<br>再設計</h3><p class="services__card-desc">勝てる形に分解し直す。利益構造・業務フロー・組織設計を再整理。</p></div>
-        <div class="services__card"><div class="services__card-num">02</div><h3 class="services__card-title">マインドセットの<br>再定義</h3><p class="services__card-desc">あり方を揃え、評価を揃える。幹部の視座統一から行動指針の言語化まで。</p></div>
-        <div class="services__card"><div class="services__card-num">03</div><h3 class="services__card-title">構造に合う人材の<br>接続</h3><p class="services__card-desc">活きる配置だけをつくる。必要なら採用・派遣まで一気通貫で対応。</p></div>
+        <div class="services__card"><div class="services__card-num">01</div><h3 class="services__card-title">事業・業務構造の<br class="pc">再設計</h3><p class="services__card-desc">勝てる形に分解し直す。利益構造・業務フロー・組織設計を再整理。</p></div>
+        <div class="services__card"><div class="services__card-num">02</div><h3 class="services__card-title">マインドセットの<br class="pc">再定義</h3><p class="services__card-desc">あり方を揃え、評価を揃える。幹部の視座統一から行動指針の言語化まで。</p></div>
+        <div class="services__card"><div class="services__card-num">03</div><h3 class="services__card-title">構造に合う人材の<br class="pc">接続</h3><p class="services__card-desc">活きる配置だけをつくる。必要なら採用・派遣まで一気通貫で対応。</p></div>
       </div>
       <p class="services__note">※ 紹介しない判断も含めた「設計責任」を持ちます。</p>
       <div class="btn-group btn-group--center" style="margin-top:32px;">
@@ -601,7 +603,7 @@
   <section class="section section--alt" id="cases">
     <div class="container">
       <p class="section-label">Case Studies</p>
-      <h2 class="section-headline">構造を変えると、<br>結果はあとからついてくる。</h2>
+      <h2 class="section-headline">構造を変えると、<br class="pc">結果はあとからついてくる。</h2>
       <p class="section-sub">業種もフェーズも異なる企業が、構造の再設計で変わっていく。</p>
       <div class="cases__grid">
         <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80&auto=format" alt="化粧品" loading="lazy"><div class="case-card__body"><span class="case-card__tag">化粧品業</span><h3 class="case-card__title">業務が社長に集中。組織の役割を再設計し、現場が自走する体制へ。</h3><p class="case-card__desc">社長がすべての判断を行い、現場が停滞。業務フローと役割分担を再構築し、管理職が意思決定できる組織に転換。</p><div class="case-card__result">社長の業務負荷60%削減</div></div></div>
@@ -627,7 +629,7 @@
   <section class="section" id="why">
     <div class="container">
       <p class="section-label">Why AIKASU</p>
-      <h2 class="section-headline">なぜ、AIKASUに<br>相談が集まるのか。</h2>
+      <h2 class="section-headline">なぜ、AIKASUに<br class="pc">相談が集まるのか。</h2>
       <div class="why__list">
         <div class="why__item"><span class="why__item-num">01</span><div><h3 class="why__item-title">福岡・熊本を中心とした経営者ネットワーク</h3><p class="why__item-desc">地域に根ざした信頼関係と、経営者同士のつながりから生まれる紹介が大半。</p></div></div>
         <div class="why__item"><span class="why__item-num">02</span><div><h3 class="why__item-title">地方での事業運営の力学の理解</h3><p class="why__item-desc">都市部と違い、地域の中でのお作法、人間関係、従業員の人材レベルなどを理解した上で制約を捉え、改善計画の立案から実行までをワンストップで支援。</p></div></div>
@@ -649,12 +651,12 @@
           <p class="founder__role">株式会社AIKASU 代表取締役</p>
           <p class="founder__name">長田政也 <span style="font-weight:300;font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,.35);">Nagata Masaya</span></p>
         </div>
-        <h2 class="founder__headline">一度、長田と<br>話してみませんか？</h2>
+        <h2 class="founder__headline">一度、長田と<br class="pc">話してみませんか？</h2>
         <div class="founder__body">
           <p>地方企業が廃業し、雇用がなくなる瞬間を、何度も見てきました。</p>
-          <p>今までの延長戦の努力では生き残れません。<br>まだ余裕があるうちに、先手を打つことで業績をよくする流れをつくりましょう。</p>
-          <p>ビジネスモデル、業務オペレーション、そして働くメンバーのマインド。<br>良くするために変化させる必要がある。<br>だけど社内からだけではうまくいかない。<br>外からだからできる改革があります。</p>
-          <p>まずは気軽に事例を聞くことや、当社の実力を知ることから初めてみてください。<br>必要があれば、貴社のことをお聞かせください。<br>勝つために、一緒に変わる挑戦をしましょう。</p>
+          <p>今までの延長戦の努力では生き残れません。<br class="pc">まだ余裕があるうちに、先手を打つことで業績をよくする流れをつくりましょう。</p>
+          <p>ビジネスモデル、業務オペレーション、そして働くメンバーのマインド。<br class="pc">良くするために変化させる必要がある。<br class="pc">だけど社内からだけではうまくいかない。<br class="pc">外からだからできる改革があります。</p>
+          <p>まずは気軽に事例を聞くことや、当社の実力を知ることから初めてみてください。<br class="pc">必要があれば、貴社のことをお聞かせください。<br class="pc">勝つために、一緒に変わる挑戦をしましょう。</p>
         </div>
         <div class="btn-group">
           <a href="https://liff.line.me/2006838056-ZwaLw1eM/landing?follow=%40032mskjq&lp=1CZeR0&liff_id=2006838056-ZwaLw1eM" class="btn btn-line" target="_blank" rel="noopener">
@@ -684,7 +686,7 @@
   <!-- 11. FINAL CTA -->
   <section class="final-cta" id="final-cta">
     <div class="container">
-      <h2>構造を変える第一歩は、<br>30分の壁打ちから。</h2>
+      <h2>構造を変える第一歩は、<br class="pc">30分の壁打ちから。</h2>
       <p>無料・秘密厳守。経営の現状を整理し、止まらないための優先順位を一緒に決めます。</p>
       <a href="https://liff.line.me/2006838056-ZwaLw1eM/landing?follow=%40032mskjq&lp=1CZeR0&liff_id=2006838056-ZwaLw1eM" class="btn btn-line" target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
