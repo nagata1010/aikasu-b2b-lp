@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>AIKASU｜事業が止まる前に、構造を変える。</title>
+  <meta name="description" content="事業が止まる原因は、人でも戦略でもない。地方企業のための構造再設計。福岡・熊本の経営者が選ぶ、オペレーション×マインドセット×採用の一気通貫支援。">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:title" content="AIKASU｜事業が止まる前に、構造を変える。">
+  <meta property="og:description" content="地方企業のための構造再設計。福岡・熊本を中心に71社の支援実績。">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       AIKASU B2B LP — v5 モバイル完全対応版
+       iPhone / Android / PC 3デバイス最適化
+       ============================================ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #0a0a0a;
+      --text: #1a1a1a;
+      --text-sub: #555555;
+      --text-light: #999999;
+      --bg: #ffffff;
+      --bg-alt: #f5f5f3;
+      --bg-dark: #0a0a0a;
+      --border: #e0e0e0;
+      --border-light: #eeeeee;
+      --line-green: #06c755;
+      --line-hover: #05a649;
+      --font: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+      --max-w: 1040px;
+      --max-w-narrow: 720px;
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.9; font-size: 15px; overflow-x: hidden; font-weight: 400; -webkit-text-size-adjust: 100%; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 48px; }
+    .container--narrow { max-width: var(--max-w-narrow); margin: 0 auto; padding: 0 48px; }
+
+    /* ---- Typography ---- */
+    .section-label {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--text-light); margin-bottom: 24px;
+    }
+    .section-headline {
+      font-size: 32px; font-weight: 900; line-height: 1.6;
+      letter-spacing: -0.01em; color: var(--primary); margin-bottom: 20px;
+    }
+    .section-sub {
+      font-size: 15px; font-weight: 300; color: var(--text-sub);
+      line-height: 1.9; max-width: 520px;
+    }
+
+    /* ---- Buttons ---- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: var(--font); font-weight: 700; font-size: 14px;
+      text-decoration: none; border-radius: 0; padding: 16px 40px;
+      transition: all 0.2s ease; cursor: pointer; border: none;
+      letter-spacing: 0.02em; -webkit-tap-highlight-color: transparent;
+    }
+    .btn-line { background: var(--line-green); color: #fff; }
+    .btn-line:hover { background: var(--line-hover); }
+    .btn-line:active { background: #049440; transform: scale(0.98); }
+    .btn-line svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .btn-dark { background: var(--primary); color: #fff; }
+    .btn-dark:hover { background: #222; }
+    .btn-outline { background: transparent; color: var(--primary); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--primary); }
+    .btn-outline-white { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.25); }
+    .btn-outline-white:hover { border-color: #fff; }
+    .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-group--center { justify-content: center; }
+
+    /* ---- Sections ---- */
+    .section { padding: 100px 0; }
+    .section--alt { background: var(--bg-alt); }
+    .section--dark { background: var(--bg-dark); color: #fff; }
+    .section--dark .section-headline { color: #fff; }
+    .section--dark .section-label { color: rgba(255,255,255,.3); }
+    .divider { border: none; border-top: 1px solid var(--border-light); margin: 0; }
+
+    /* ============================================
+       STICKY CTA (Mobile)
+       ============================================ */
+    .sticky-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;
+      background: #fff; border-top: 1px solid var(--border);
+      padding: 10px 16px; padding-bottom: calc(10px + var(--safe-bottom));
+    }
+    .sticky-cta .btn { width: 100%; padding: 14px; font-size: 14px; border-radius: 0; }
+
+    /* ============================================
+       1. HERO
+       ============================================ */
+    .hero {
+      position: relative; min-height: 100vh; min-height: 100svh;
+      display: flex; align-items: center; overflow: hidden;
+    }
+    .hero__bg { position: absolute; inset: 0; z-index: 0; }
+    .hero__bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero__overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(170deg, rgba(10,10,10,.88) 0%, rgba(10,10,10,.72) 50%, rgba(10,10,10,.6) 100%);
+    }
+    .hero__inner {
+      position: relative; z-index: 2; max-width: var(--max-w);
+      margin: 0 auto; padding: 0 48px; width: 100%;
+    }
+    .hero__content {
+      display: grid; grid-template-columns: 1fr 300px;
+      gap: 64px; align-items: end; padding: 140px 0 100px;
+    }
+    .hero__text { color: #fff; }
+    .hero__label {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.3em;
+      color: rgba(255,255,255,.4); margin-bottom: 32px; text-transform: uppercase;
+    }
+    .hero h1 { font-size: 42px; font-weight: 900; line-height: 1.5; color: #fff; letter-spacing: -0.02em; }
+    .hero__sub { margin-top: 28px; font-size: 15px; font-weight: 300; color: rgba(255,255,255,.6); line-height: 2; }
+    .hero__tags { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+    .hero__tag {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.05em;
+      color: rgba(255,255,255,.5); padding-bottom: 4px;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    .hero .btn-group { margin-top: 44px; }
+    .hero__micro { margin-top: 14px; font-size: 11px; font-weight: 300; color: rgba(255,255,255,.3); }
+
+    /* Hero Stats Panel */
+    .hero__stats { color: #fff; padding-bottom: 8px; }
+    .hero__stats-label {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.2em;
+      color: rgba(255,255,255,.3); margin-bottom: 24px; text-transform: uppercase;
+    }
+    .hero__stat-block { margin-bottom: 24px; }
+    .hero__stat-num { font-size: 56px; font-weight: 900; line-height: 1; color: #fff; letter-spacing: -0.03em; }
+    .hero__stat-unit { font-size: 16px; font-weight: 500; color: rgba(255,255,255,.4); margin-left: 2px; }
+    .hero__stat-desc { font-size: 11px; font-weight: 400; color: rgba(255,255,255,.35); margin-top: 4px; letter-spacing: 0.03em; }
+    .hero__stat-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin: 0 0 20px; }
+    .hero__stat-row { display: flex; justify-content: space-between; margin-bottom: 6px; }
+    .hero__stat-row-label { font-size: 12px; font-weight: 400; color: rgba(255,255,255,.4); }
+    .hero__stat-row-value { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.7); }
+
+    /* Mobile Stats (shown only on mobile) */
+    .hero__stats-mobile {
+      display: none;
+      margin-top: 32px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .hero__stats-mobile-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .hero__stats-mobile-item { text-align: center; }
+    .hero__stats-mobile-num { font-size: 32px; font-weight: 900; color: #fff; line-height: 1; }
+    .hero__stats-mobile-num span { font-size: 12px; font-weight: 500; color: rgba(255,255,255,.4); }
+    .hero__stats-mobile-caption { font-size: 10px; font-weight: 400; color: rgba(255,255,255,.35); margin-top: 4px; }
+
+    /* ============================================
+       2. NUMBERS BAR
+       ============================================ */
+    .numbers { padding: 48px 0; border-bottom: 1px solid var(--border-light); }
+    .numbers__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .numbers__item { text-align: center; position: relative; }
+    .numbers__item:not(:last-child)::after {
+      content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+      width: 1px; height: 32px; background: var(--border-light);
+    }
+    .numbers__value { font-size: 36px; font-weight: 900; color: var(--primary); line-height: 1; letter-spacing: -0.03em; }
+    .numbers__value span { font-size: 14px; font-weight: 500; letter-spacing: 0; }
+    .numbers__caption { font-size: 11px; font-weight: 400; color: var(--text-light); margin-top: 8px; letter-spacing: 0.05em; }
+
+    /* ============================================
+       3. PROBLEM
+       ============================================ */
+    .problem__grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start; margin-top: 48px;
+    }
+    .problem__body { padding-top: 4px; }
+    .problem__body p { font-size: 15px; font-weight: 300; color: var(--text-sub); margin-bottom: 12px; line-height: 2; }
+    .problem__body p:last-child { font-weight: 700; color: var(--text); font-size: 16px; margin-top: 12px; }
+    .problem__list { list-style: none; display: grid; gap: 0; }
+    .problem__list li {
+      padding: 18px 0; border-bottom: 1px solid var(--border-light);
+      font-size: 14px; font-weight: 500; color: var(--text);
+      display: flex; align-items: center; gap: 16px;
+    }
+    .problem__list li:first-child { border-top: 1px solid var(--border-light); }
+    .problem__list-num {
+      font-size: 10px; font-weight: 900; color: var(--text-light);
+      letter-spacing: 0.05em; width: 20px; flex-shrink: 0;
+    }
+
+    /* ============================================
+       4. PHILOSOPHY
+       ============================================ */
+    .philosophy { padding: 120px 0; }
+    .philosophy__inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .philosophy__lines { margin: 40px 0; display: grid; gap: 4px; }
+    .philosophy__lines p { font-size: 17px; font-weight: 300; color: var(--text-sub); }
+    .philosophy__reframe { margin-top: 48px; font-size: 20px; font-weight: 900; color: var(--primary); letter-spacing: -0.01em; }
+    .philosophy__reframe-line { display: block; width: 32px; height: 2px; background: var(--primary); margin: 20px auto 0; }
+
+    /* ============================================
+       5. TWO AXES
+       ============================================ */
+    .axes__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 48px; }
+    .axes__col { padding: 40px; }
+    .axes__col--win { border-right: 1px solid var(--border-light); }
+    .axes__col-label { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; color: var(--text-light); text-transform: uppercase; margin-bottom: 12px; }
+    .axes__col-title { font-size: 22px; font-weight: 900; color: var(--primary); margin-bottom: 28px; letter-spacing: -0.01em; }
+    .axes__col ul { list-style: none; display: grid; gap: 14px; }
+    .axes__col li { font-size: 14px; font-weight: 400; color: var(--text-sub); padding-left: 16px; position: relative; line-height: 1.7; }
+    .axes__col li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 1px; background: var(--text-light); }
+    .axes__closing { margin-top: 56px; font-size: 20px; font-weight: 900; color: var(--primary); text-align: center; letter-spacing: -0.01em; }
+
+    /* ============================================
+       6. SERVICES
+       ============================================ */
+    .services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 48px; }
+    .services__card { padding: 36px 32px; border-right: 1px solid var(--border-light); }
+    .services__card:last-child { border-right: none; }
+    .services__card-num { font-size: 32px; font-weight: 900; color: var(--border); margin-bottom: 20px; line-height: 1; }
+    .services__card-title { font-size: 16px; font-weight: 900; color: var(--primary); margin-bottom: 12px; line-height: 1.5; }
+    .services__card-desc { font-size: 13px; font-weight: 300; color: var(--text-sub); line-height: 1.8; }
+    .services__note { margin-top: 32px; font-size: 12px; font-weight: 400; color: var(--text-light); text-align: center; }
+
+    /* ============================================
+       7. CASE STUDIES
+       ============================================ */
+    .cases__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 48px; background: var(--border-light); }
+    .case-card { background: var(--bg); }
+    .case-card__img { width: 100%; height: 200px; object-fit: cover; }
+    .case-card__body { padding: 28px 28px 32px; }
+    .case-card__tag { display: inline-block; font-size: 10px; font-weight: 500; color: var(--text-light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+    .case-card__title { font-size: 16px; font-weight: 900; color: var(--primary); line-height: 1.6; margin-bottom: 12px; }
+    .case-card__desc { font-size: 13px; font-weight: 300; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
+    .case-card__result {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 700; color: var(--primary);
+      padding-bottom: 4px; border-bottom: 2px solid var(--primary);
+    }
+    .cases__more { text-align: center; margin-top: 48px; }
+
+    /* ============================================
+       8. WHY AIKASU
+       ============================================ */
+    .why__list { margin-top: 56px; display: grid; gap: 0; }
+    .why__item {
+      display: grid; grid-template-columns: 56px 1fr; gap: 24px;
+      padding: 36px 0; border-bottom: 1px solid var(--border-light); align-items: start;
+    }
+    .why__item:first-child { border-top: 1px solid var(--border-light); }
+    .why__item-num { font-size: 28px; font-weight: 900; color: var(--border); line-height: 1; }
+    .why__item-title { font-size: 16px; font-weight: 900; color: var(--primary); margin-bottom: 8px; }
+    .why__item-desc { font-size: 13px; font-weight: 300; color: var(--text-sub); line-height: 1.85; }
+
+    /* ============================================
+       9. FOUNDER / MESSAGE
+       ============================================ */
+    .founder { padding: 0; }
+    .founder__grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+    .founder__photo { position: relative; overflow: hidden; background: #f0f0f0; }
+    .founder__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+    .founder__content {
+      background: var(--bg-dark); color: #fff; display: flex;
+      flex-direction: column; justify-content: center; padding: 72px 56px;
+    }
+    .founder__name-block { margin-bottom: 28px; }
+    .founder__role { font-size: 11px; font-weight: 400; letter-spacing: 0.1em; color: rgba(255,255,255,.3); margin-bottom: 4px; }
+    .founder__name { font-size: 13px; font-weight: 500; color: rgba(255,255,255,.5); letter-spacing: 0.08em; }
+    .founder__headline { font-size: 26px; font-weight: 900; line-height: 1.6; color: #fff; margin-bottom: 28px; letter-spacing: -0.01em; }
+    .founder__body p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.6); margin-bottom: 10px; line-height: 2; }
+    .founder .btn-group { margin-top: 36px; }
+
+    /* ============================================
+       10. FAQ
+       ============================================ */
+    .faq__list { margin-top: 48px; }
+    .faq__item { border-bottom: 1px solid var(--border-light); }
+    .faq__item:first-child { border-top: 1px solid var(--border-light); }
+    .faq__question {
+      font-size: 14px; font-weight: 700; color: var(--primary);
+      cursor: pointer; display: flex; align-items: center; gap: 16px;
+      background: none; border: none; width: 100%; text-align: left;
+      font-family: var(--font); padding: 22px 0; -webkit-tap-highlight-color: transparent;
+    }
+    .faq__question:hover { color: var(--text-sub); }
+    .faq__question-num { font-size: 10px; font-weight: 500; color: var(--text-light); width: 20px; flex-shrink: 0; letter-spacing: 0.05em; }
+    .faq__question::after { content: '+'; margin-left: auto; font-size: 18px; font-weight: 300; color: var(--text-light); flex-shrink: 0; padding-left: 12px; }
+    .faq__question[aria-expanded="true"]::after { content: '\2212'; }
+    .faq__answer { padding: 0 0 22px 36px; font-size: 14px; font-weight: 300; color: var(--text-sub); line-height: 1.9; }
+
+    /* ============================================
+       11. FINAL CTA
+       ============================================ */
+    .final-cta { background: var(--primary); padding: 88px 0; text-align: center; color: #fff; }
+    .final-cta h2 { font-size: 28px; font-weight: 900; margin-bottom: 16px; color: #fff; letter-spacing: -0.01em; line-height: 1.6; }
+    .final-cta p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.5); margin-bottom: 36px; }
+    .final-cta .btn-line { font-size: 15px; padding: 18px 48px; }
+    .final-cta__note { margin-top: 14px; font-size: 11px; font-weight: 300; color: rgba(255,255,255,.25); }
+
+    .footer { padding: 40px; text-align: center; font-size: 11px; font-weight: 400; color: var(--text-light); letter-spacing: 0.05em; }
+
+    /* ============================================
+       RESPONSIVE — Tablet (768px)
+       ============================================ */
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .container, .container--narrow { padding: 0 24px; }
+
+      .hero { min-height: 100svh; min-height: -webkit-fill-available; }
+      .hero__inner { padding: 0 24px; }
+      .hero__content { grid-template-columns: 1fr; gap: 0; padding: 100px 0 64px; }
+      .hero h1 { font-size: 28px; line-height: 1.55; }
+      .hero__stats { display: none; }
+      .hero__stats-mobile { display: block; }
+      .hero .btn-group { flex-direction: column; }
+      .hero .btn { width: 100%; padding: 16px; }
+
+      .section-headline { font-size: 24px; }
+
+      .numbers { padding: 32px 0; }
+      .numbers__grid { grid-template-columns: repeat(2, 1fr); gap: 20px 0; }
+      .numbers__item:nth-child(2)::after { display: none; }
+      .numbers__value { font-size: 28px; }
+
+      .problem__grid { grid-template-columns: 1fr; gap: 32px; }
+      .problem__list li { padding: 16px 0; font-size: 13px; }
+
+      .philosophy { padding: 80px 0; }
+      .philosophy__lines p { font-size: 15px; }
+      .philosophy__reframe { font-size: 17px; }
+
+      .axes__grid { grid-template-columns: 1fr; }
+      .axes__col--win { border-right: none; border-bottom: 1px solid var(--border-light); }
+      .axes__col { padding: 28px 0; }
+      .axes__closing { font-size: 17px; margin-top: 36px; }
+
+      .services__grid { grid-template-columns: 1fr; }
+      .services__card { border-right: none; border-bottom: 1px solid var(--border-light); padding: 28px 0; }
+      .services__card:last-child { border-bottom: none; }
+
+      .cases__grid { grid-template-columns: 1fr; }
+      .case-card__img { height: 180px; }
+      .case-card__body { padding: 20px 20px 24px; }
+      .case-card__title { font-size: 15px; }
+      .case-card__desc { font-size: 13px; margin-bottom: 16px; }
+
+      .why__item { grid-template-columns: 36px 1fr; gap: 16px; padding: 24px 0; }
+      .why__item-num { font-size: 22px; }
+      .why__item-title { font-size: 15px; }
+
+      .founder__grid { grid-template-columns: 1fr; min-height: auto; }
+      .founder__photo { height: 400px; }
+      .founder__content { padding: 48px 24px; }
+      .founder__headline { font-size: 22px; }
+      .founder__body p { font-size: 13px; }
+
+      .btn-group { flex-direction: column; }
+      .btn-group .btn { width: 100%; }
+
+      .faq__question { font-size: 13px; padding: 18px 0; gap: 12px; }
+      .faq__answer { padding: 0 0 18px 32px; font-size: 13px; }
+
+      .final-cta { padding: 56px 0; }
+      .final-cta h2 { font-size: 22px; }
+      .final-cta .btn-line { padding: 16px 32px; font-size: 14px; }
+
+      .sticky-cta { display: block; }
+      .footer { padding: 32px 24px 72px; padding-bottom: calc(72px + var(--safe-bottom)); }
+    }
+
+    /* ============================================
+       RESPONSIVE — Small mobile (480px)
+       ============================================ */
+    @media (max-width: 480px) {
+      .container, .container--narrow { padding: 0 20px; }
+      .hero__inner { padding: 0 20px; }
+      .hero__content { padding: 80px 0 48px; }
+      .hero h1 { font-size: 24px; }
+      .hero__sub { font-size: 13px; margin-top: 20px; }
+      .hero__label { margin-bottom: 24px; font-size: 9px; }
+      .hero__tags { gap: 10px; margin-top: 20px; }
+      .hero__tag { font-size: 10px; }
+      .hero .btn-group { margin-top: 32px; }
+      .hero__stats-mobile { padding: 16px; margin-top: 24px; }
+      .hero__stats-mobile-num { font-size: 26px; }
+
+      .section { padding: 48px 0; }
+      .section-headline { font-size: 21px; line-height: 1.65; }
+      .section-label { margin-bottom: 16px; }
+      .section-sub { font-size: 13px; }
+
+      .numbers { padding: 24px 0; }
+      .numbers__grid { gap: 16px 0; }
+      .numbers__value { font-size: 24px; }
+      .numbers__caption { font-size: 10px; }
+
+      .problem__body p { font-size: 13px; }
+      .problem__list li { font-size: 13px; gap: 12px; }
+
+      .philosophy { padding: 56px 0; }
+      .philosophy__lines p { font-size: 14px; }
+      .philosophy__reframe { font-size: 16px; margin-top: 32px; }
+
+      .axes__col-title { font-size: 19px; margin-bottom: 20px; }
+      .axes__col li { font-size: 13px; }
+
+      .services__card-num { font-size: 28px; }
+      .services__card-title { font-size: 15px; }
+      .services__card-desc { font-size: 12px; }
+
+      .case-card__img { height: 160px; }
+
+      .founder__photo { height: 320px; }
+      .founder__content { padding: 36px 20px; }
+      .founder__headline { font-size: 20px; }
+      .founder__body p { font-size: 12px; line-height: 1.9; }
+
+      .final-cta { padding: 48px 0; }
+      .final-cta h2 { font-size: 20px; }
+      .final-cta p { font-size: 13px; margin-bottom: 28px; }
+      .final-cta .btn-line { width: 100%; padding: 16px; font-size: 14px; }
+    }
+
+    /* ============================================
+       RESPONSIVE — Large desktop (1200px+)
+       ============================================ */
+    @media (min-width: 1200px) {
+      .hero h1 { font-size: 48px; }
+      .section-headline { font-size: 36px; }
+      .hero__stat-num { font-size: 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="素材/DSC08636_1.jpg" alt="AIKASUチーム" loading="eager">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__inner">
+      <div class="hero__content">
+        <div class="hero__text">
+          <p class="hero__label">Structural Redesign for Local Business</p>
+          <h1>事業が止まる原因は、<br>人でも戦略でもない。</h1>
+          <p class="hero__sub">企業経営の「今後」を安心させる。<br>地方企業のための、構造再設計。</p>
+          <div class="hero__tags">
+            <span class="hero__tag">事業と業務構造の再設計</span>
+            <span class="hero__tag">実行伴走・成果重視</span>
+            <span class="hero__tag">採用まで一気通貫</span>
+          </div>
+          <!-- Mobile Stats -->
+          <div class="hero__stats-mobile">
+            <div class="hero__stats-mobile-grid">
+              <div class="hero__stats-mobile-item">
+                <div class="hero__stats-mobile-num">71<span>社</span></div>
+                <div class="hero__stats-mobile-caption">支援実績</div>
+              </div>
+              <div class="hero__stats-mobile-item">
+                <div class="hero__stats-mobile-num">93<span>%</span></div>
+                <div class="hero__stats-mobile-caption">改善完了率</div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-group">
+            <a href="https://liff.line.me/2006838056-ZwaLw1eM/landing?follow=%40032mskjq&lp=1CZeR0&liff_id=2006838056-ZwaLw1eM" class="btn btn-line" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+              LINEで無料相談する
+            </a>
+            <a href="https://liff.line.me/2006838056-ZwaLw1eM/landing?follow=%40032mskjq&lp=1CZeR0&liff_id=2006838056-ZwaLw1eM" class="btn btn-outline-white" target="_blank" rel="noopener">長田と30分、壁打ちする</a>
+          </div>
+          <p class="hero__micro">※ 無料・秘密厳守。まずは現状の整理から。</p>
+        </div>
+        <div class="hero__stats">
+          <p class="hero__stats-label">Track Record</p>
+          <div class="hero__stat-block">
+            <div><span class="hero__stat-num">71</span><span class="hero__stat-unit">社</span></div>
+            <p class="hero__stat-desc">九州エリアの支援実績</p>
+          </div>
+          <hr class="hero__stat-divider">
+          <div class="hero__stat-row"><span class="hero__stat-row-label">改善完了</span><span class="hero__stat-row-value">93%（66社）</span></div>
+          <div class="hero__stat-row"><span class="hero__stat-row-label">改善中</span><span class="hero__stat-row-value">7%（5社）</span></div>
+          <div class="hero__stat-row"><span class="hero__stat-row-label">拠点</span><span class="hero__stat-row-value">福岡・熊本</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. NUMBERS -->
+  <div class="numbers">
+    <div class="container">
+      <div class="numbers__grid">
+        <div class="numbers__item"><div class="numbers__value">71<span>社</span></div><div class="numbers__caption">支援実績</div></div>
+        <div class="numbers__item"><div class="numbers__value">93<span>%</span></div><div class="numbers__caption">改善完了率</div></div>
+        <div class="numbers__item"><div class="numbers__value">66<span>社</span></div><div class="numbers__caption">改善完了</div></div>
+        <div class="numbers__item"><div class="numbers__value">5<span>社</span></div><div class="numbers__caption">改善中</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. PROBLEM -->
+  <section class="section" id="problem">
+    <div class="container">
+      <p class="section-label">Problem</p>
+      <h2 class="section-headline">地方には、努力が報われない<br>会社が多すぎる。</h2>
+      <div class="problem__grid">
+        <div class="problem__body">
+          <p>良い商品がある。真面目に働いている。地域に必要とされている。</p>
+          <p>それでも、会社は静かに止まっていく。</p>
+          <p>理由はシンプルだ。構造が、時代に合っていない。</p>
+        </div>
+        <ul class="problem__list">
+          <li><span class="problem__list-num">01</span>採用しても定着しない</li>
+          <li><span class="problem__list-num">02</span>利益率が上がらない</li>
+          <li><span class="problem__list-num">03</span>社長に業務が集中する</li>
+          <li><span class="problem__list-num">04</span>属人化して再現性がない</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 4. PHILOSOPHY -->
+  <section class="philosophy" id="philosophy">
+    <div class="container">
+      <div class="philosophy__inner">
+        <p class="section-label">Philosophy</p>
+        <h2 class="section-headline">私たちは、人を増やす前に、<br>構造を変える。</h2>
+        <div class="philosophy__lines">
+          <p>人が足りないのではない。</p>
+          <p>能力がないのでもない。</p>
+          <p>人が活きない設計になっているだけ。</p>
+        </div>
+        <p class="philosophy__reframe">AIKASUは「人に頼らない経営」をつくる会社です。</p>
+        <span class="philosophy__reframe-line"></span>
+        <div class="btn-group btn-group--center" style="margin-top:48px;">
+          <a href="https://liff.line.me/2006838056-ZwaLw1eM/landing?follow=%40032mskjq&lp=1CZeR0&liff_id=2006838056-ZwaLw1eM" class="btn btn-line" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINEで無料相談する
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. TWO AXES -->
+  <section class="section section--alt" id="axes">
+    <div class="container">
+      <p class="section-label">Framework</p>
+      <h2 class="section-headline">勝ち方と、あり方。<br>どちらが欠けても会社は止まる。</h2>
+      <div class="axes__grid">
+        <div class="axes__col axes__col--win">
+          <p class="axes__col-label">Structure</p>
+          <h3 class="axes__col-title">勝ち方</h3>
+          <ul><li>どこで利益を出すか</li><li>どこを削ぎ落とすか</li><li>誰がやるべきで、誰がやらないか</li></ul>
+        </div>
+        <div class="axes__col">
+          <p class="axes__col-label">Mindset</p>
+          <h3 class="axes__col-title">あり方</h3>
+          <ul><li>どんな覚悟で働くか</li><li>何を評価するか</li><li>何をやらないか</li></ul>
+        </div>
+      </div>
+      <p class="axes__closing">この2つを揃えることが、経営の再設計だ。</p>
+    </div>
+  </section>
+
+  <!-- 6. SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <p class="section-label">Services</p>
+      <h2 class="section-headline">AIKASUがやっていること</h2>
+      <p class="section-sub">思想だけでは変わらない。手を動かし、成果が出る形に整える。</p>
+      <div class="services__grid">
+        <div class="services__card"><div class="services__card-num">01</div><h3 class="services__card-title">事業・業務構造の<br>再設計</h3><p class="services__card-desc">勝てる形に分解し直す。利益構造・業務フロー・組織設計を再整理。</p></div>
+        <div class="services__card"><div class="services__card-num">02</div><h3 class="services__card-title">マインドセットの<br>再定義</h3><p class="services__card-desc">あり方を揃え、評価を揃える。幹部の視座統一から行動指針の言語化まで。</p></div>
+        <div class="services__card"><div class="services__card-num">03</div><h3 class="services__card-title">構造に合う人材の<br>接続</h3><p class="services__card-desc">活きる配置だけをつくる。必要なら採用・派遣まで一気通貫で対応。</p></div>
+      </div>
+      <p class="services__note">※ 紹介しない判断も含めた「設計責任」を持ちます。</p>
+      <div class="btn-group btn-group--center" style="margin-top:32px;">
+        <a href="https://liff.line.me/2006838056-ZwaLw1eM/landing?follow=%40032mskjq&lp=1CZeR0&liff_id=2006838056-ZwaLw1eM" class="btn btn-outline" target="_blank" rel="noopener">長田と30分、壁打ちする</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CASE STUDIES -->
+  <section class="section section--alt" id="cases">
+    <div class="container">
+      <p class="section-label">Case Studies</p>
+      <h2 class="section-headline">構造を変えると、<br>結果はあとからついてくる。</h2>
+      <p class="section-sub">業種もフェーズも異なる企業が、構造の再設計で変わっていく。</p>
+      <div class="cases__grid">
+        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80&auto=format" alt="化粧品" loading="lazy"><div class="case-card__body"><span class="case-card__tag">化粧品業</span><h3 class="case-card__title">業務が社長に集中。組織の役割を再設計し、現場が自走する体制へ。</h3><p class="case-card__desc">社長がすべての判断を行い、現場が停滞。業務フローと役割分担を再構築し、管理職が意思決定できる組織に転換。</p><div class="case-card__result">社長の業務負荷60%削減</div></div></div>
+        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80&auto=format" alt="飲食店" loading="lazy"><div class="case-card__body"><span class="case-card__tag">飲食業</span><h3 class="case-card__title">離職率80%超。マインドセット研修と評価制度で定着率を劇的改善。</h3><p class="case-card__desc">スタッフが入っても半年で辞める悪循環。評価基準を言語化し、リーダー育成を実施。あり方を揃えることで組織が安定。</p><div class="case-card__result">離職率 80% → 10%</div></div></div>
+        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1562408590-e32931084e23?w=600&q=80&auto=format" alt="印刷" loading="lazy"><div class="case-card__body"><span class="case-card__tag">印刷業</span><h3 class="case-card__title">赤字体質から黒字化。構造改善で従業員の給与も2割UP。</h3><p class="case-card__desc">慢性的な赤字が続く中、収益構造と業務フローを再設計。不採算を整理し、利益が残る構造に転換。従業員還元まで実現。</p><div class="case-card__result">赤字→黒字化・給与2割UP</div></div></div>
+        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&auto=format" alt="不動産" loading="lazy"><div class="case-card__body"><span class="case-card__tag">不動産業</span><h3 class="case-card__title">構造再設計から事業売却まで。ロックアップ半年での会社売却を成功。</h3><p class="case-card__desc">売上はあるのに利益が残らない状態。事業構造を再設計し、企業価値を最大化。ロックアップ期間半年でのM&amp;Aを実現。</p><div class="case-card__result">ロックアップ半年で売却成功</div></div></div>
+        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80&auto=format" alt="コンサルティング" loading="lazy"><div class="case-card__body"><span class="case-card__tag">コンサルティング業</span><h3 class="case-card__title">社長依存体制を脱却。経営代行し、1年半で最高業績を達成。</h3><p class="case-card__desc">社長がいなければ回らない構造を解消。経営代行として入り込み、組織と仕組みを再構築。過去最高業績を更新。</p><div class="case-card__result">1年半で過去最高業績</div></div></div>
+        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80&auto=format" alt="IT" loading="lazy"><div class="case-card__body"><span class="case-card__tag">IT・Web</span><h3 class="case-card__title">急成長フェーズの組織崩壊を防止。経営幹部の視座を統一。</h3><p class="case-card__desc">急拡大で組織が分断。幹部間の方針のズレを可視化し、マインドセット研修で経営チームを再構築。</p><div class="case-card__result">幹部離職ゼロ・意思決定2倍</div></div></div>
+        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&q=80&auto=format" alt="小売店" loading="lazy"><div class="case-card__body"><span class="case-card__tag">小売業</span><h3 class="case-card__title">多店舗展開で品質がバラバラに。オペレーション統一で再現性を確保。</h3><p class="case-card__desc">店舗ごとに運営品質が異なり顧客満足度が低下。業務標準化と評価体制の統一で、どの店舗でも同じ品質を実現。</p><div class="case-card__result">顧客満足度スコア35%向上</div></div></div>
+        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80&auto=format" alt="営業" loading="lazy"><div class="case-card__body"><span class="case-card__tag">営業代理業</span><h3 class="case-card__title">組織崩壊・業績ピークアウトから、事業拡大へ。営業利益6倍に。</h3><p class="case-card__desc">組織が崩壊し業績がピークアウト。構造を再設計し、事業拡大と営業利益の大幅改善を同時に実現。</p><div class="case-card__result">事業拡大・営業利益6倍</div></div></div>
+      </div>
+      <div class="cases__more"><a href="https://aikasu.jp/case" class="btn btn-outline" target="_blank" rel="noopener">すべての改善事例を見る</a></div>
+      <div class="btn-group btn-group--center" style="margin-top:24px;">
+        <a href="https://liff.line.me/2006838056-ZwaLw1eM/landing?follow=%40032mskjq&lp=1CZeR0&liff_id=2006838056-ZwaLw1eM" class="btn btn-line" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          自社に近い事例を相談する
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. WHY AIKASU -->
+  <section class="section" id="why">
+    <div class="container">
+      <p class="section-label">Why AIKASU</p>
+      <h2 class="section-headline">なぜ、AIKASUに<br>相談が集まるのか。</h2>
+      <div class="why__list">
+        <div class="why__item"><span class="why__item-num">01</span><div><h3 class="why__item-title">福岡・熊本を中心とした経営者ネットワーク</h3><p class="why__item-desc">地域に根ざした信頼関係と、経営者同士のつながりから生まれる紹介が大半。</p></div></div>
+        <div class="why__item"><span class="why__item-num">02</span><div><h3 class="why__item-title">地方での事業運営の力学の理解</h3><p class="why__item-desc">都市部と違い、地域の中でのお作法、人間関係、従業員の人材レベルなどを理解した上で制約を捉え、改善計画の立案から実行までをワンストップで支援。</p></div></div>
+        <div class="why__item"><span class="why__item-num">03</span><div><h3 class="why__item-title">人材活用の代行ジャッジ</h3><p class="why__item-desc">既存社員を活用してより利益を生み出す体制をつくるための配置、目標設定等のジャッジメントを代行支援。勝てる仕組みづくりを代行。</p></div></div>
+        <div class="why__item"><span class="why__item-num">04</span><div><h3 class="why__item-title">設計責任を持つ</h3><p class="why__item-desc">紹介して終わりではない。回り続ける状態まで設計する責任を持つ。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. MESSAGE -->
+  <section class="founder" id="founder">
+    <div class="founder__grid">
+      <div class="founder__photo">
+        <img src="ChatGPT Image 2026年2月15日 23_07_46.png" alt="代表 長田" loading="lazy">
+      </div>
+      <div class="founder__content">
+        <p class="section-label" style="color:rgba(255,255,255,.3);">Message</p>
+        <div class="founder__name-block">
+          <p class="founder__role">株式会社AIKASU 代表取締役</p>
+          <p class="founder__name">長田政也 <span style="font-weight:300;font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,.35);">Nagata Masaya</span></p>
+        </div>
+        <h2 class="founder__headline">一度、長田と<br>話してみませんか？</h2>
+        <div class="founder__body">
+          <p>地方企業が廃業し、雇用がなくなる瞬間を、何度も見てきました。</p>
+          <p>今までの延長戦の努力では生き残れません。<br>まだ余裕があるうちに、先手を打つことで業績をよくする流れをつくりましょう。</p>
+          <p>ビジネスモデル、業務オペレーション、そして働くメンバーのマインド。<br>良くするために変化させる必要がある。<br>だけど社内からだけではうまくいかない。<br>外からだからできる改革があります。</p>
+          <p>まずは気軽に事例を聞くことや、当社の実力を知ることから初めてみてください。<br>必要があれば、貴社のことをお聞かせください。<br>勝つために、一緒に変わる挑戦をしましょう。</p>
+        </div>
+        <div class="btn-group">
+          <a href="https://liff.line.me/2006838056-ZwaLw1eM/landing?follow=%40032mskjq&lp=1CZeR0&liff_id=2006838056-ZwaLw1eM" class="btn btn-line" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINEで無料相談する
+          </a>
+          <a href="https://liff.line.me/2006838056-ZwaLw1eM/landing?follow=%40032mskjq&lp=1CZeR0&liff_id=2006838056-ZwaLw1eM" class="btn btn-outline-white" target="_blank" rel="noopener">長田と30分、壁打ちする</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ -->
+  <section class="section" id="faq">
+    <div class="container--narrow">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-headline">よくある質問</h2>
+      <div class="faq__list">
+        <div class="faq__item"><button class="faq__question" aria-expanded="true"><span class="faq__question-num">Q1</span>費用感はどのくらいですか？</button><div class="faq__answer"><p>まずは現状と目的を伺い、必要な範囲（設計〜実行〜採用）で提案します。単発の壁打ちから可能です。</p></div></div>
+        <div class="faq__item"><button class="faq__question" aria-expanded="false"><span class="faq__question-num">Q2</span>人材紹介だけお願いできますか？</button><div class="faq__answer" style="display:none;"><p>可能です。ただし、構造上ミスマッチが起きる場合は「紹介しない」提案も行います。</p></div></div>
+        <div class="faq__item"><button class="faq__question" aria-expanded="false"><span class="faq__question-num">Q3</span>まず何から始めますか？</button><div class="faq__answer" style="display:none;"><p>最初に「どこで利益を出すか」「何を削るか」「誰がやるか」を再定義し、止まらない形の優先順位を決めます。</p></div></div>
+        <div class="faq__item"><button class="faq__question" aria-expanded="false"><span class="faq__question-num">Q4</span>オンラインで相談できますか？</button><div class="faq__answer" style="display:none;"><p>可能です。LINE登録後、日程を調整します。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FINAL CTA -->
+  <section class="final-cta" id="final-cta">
+    <div class="container">
+      <h2>構造を変える第一歩は、<br>30分の壁打ちから。</h2>
+      <p>無料・秘密厳守。経営の現状を整理し、止まらないための優先順位を一緒に決めます。</p>
+      <a href="https://liff.line.me/2006838056-ZwaLw1eM/landing?follow=%40032mskjq&lp=1CZeR0&liff_id=2006838056-ZwaLw1eM" class="btn btn-line" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINEで無料相談する
+      </a>
+      <p class="final-cta__note">※ 登録後すぐに日程調整が可能です</p>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><p>&copy; AIKASU Inc. All rights reserved.</p></div></footer>
+
+  <!-- STICKY CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="https://liff.line.me/2006838056-ZwaLw1eM/landing?follow=%40032mskjq&lp=1CZeR0&liff_id=2006838056-ZwaLw1eM" class="btn btn-line" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      LINEで無料相談する
+    </a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq__question').forEach(function(btn){btn.addEventListener('click',function(){var a=this.nextElementSibling;var o=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',String(!o));a.style.display=o?'none':'block';});});
+    var sc=document.getElementById('stickyCta'),hs=document.getElementById('hero');
+    if(sc&&hs){new IntersectionObserver(function(e){e.forEach(function(en){sc.style.display=en.isIntersecting?'none':'block';});},{threshold:0}).observe(hs);}
+  </script>
+</body>
+</html>
