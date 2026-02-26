@@ -412,9 +412,9 @@ footer{padding:40px 0;font-size:12px;color:var(--sub);border-top:1px solid var(-
 <!-- ===== TO WIN PROJECT ===== -->
 <section class="sec" id="to-win" style="background:var(--muted)">
 <div class="wrap">
-  <div class="en-label">TO WIN PROJECT</div>
-  <h2 class="sec-title">勝利の<br class="sp-br">プロジェクト</h2>
-  <p class="sec-desc">課題 → 作戦 → 結果。<br>1枚で全体像を<br class="sp-br">把握する。</p>
+  <div class="en-label">TO ACCELERU PROJECT</div>
+  <h2 class="sec-title">アクセルを踏めた<br class="sp-br">変革事例</h2>
+  <p class="sec-desc">課題→打ち手→成果を<br class="sp-br">一目で確認いただけます。</p>
   <div class="twp-grid" id="twpGrid"></div>
 </div>
 </section>
@@ -447,7 +447,7 @@ footer{padding:40px 0;font-size:12px;color:var(--sub);border-top:1px solid var(-
 <!-- ===== STATEMENT 3 ===== -->
 <section class="statement statement-ink">
 <div class="wrap">
-  <p>アクセルを踏めた<br class="sp-br">変革事例</p>
+  <p>アクセルを踏むなら、<br class="sp-br">仕組み改革から</p>
 </div>
 </section>
 <!-- ===== PAST WORKS ===== -->
@@ -612,9 +612,9 @@ function renderTWP(){
   if(top5.length<5)top5=content.cases.slice(0,5);
   top5.forEach(function(c,i){
     h+='<div class="twp-card">';
-    h+='<div class="twp-cell"><div class="twp-cell-label">CHALLENGE</div><div class="twp-cell-val">'+c.industry+'<br>'+c.challenge+'</div></div>';
-    h+='<div class="twp-cell"><div class="twp-cell-label">STRATEGY</div><div class="twp-cell-val">'+c.approach+'</div></div>';
-    h+='<div class="twp-cell"><div class="twp-cell-label">RESULT</div><div class="twp-cell-val"><strong>'+c.result+'</strong></div></div>';
+    h+='<div class="twp-cell"><div class="twp-cell-label">課題</div><div class="twp-cell-val">'+c.industry+'<br>'+c.challenge+'</div></div>';
+    h+='<div class="twp-cell"><div class="twp-cell-label">打ち手</div><div class="twp-cell-val">'+c.approach+'</div></div>';
+    h+='<div class="twp-cell"><div class="twp-cell-label">成果</div><div class="twp-cell-val"><strong>'+c.result+'</strong></div></div>';
     h+='</div>';
   });
   g.innerHTML=h;
