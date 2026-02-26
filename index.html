@@ -1,716 +1,687 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>AIKASU｜事業が止まる前に、構造を変える。</title>
-  <meta name="description" content="事業が止まる原因は、人でも戦略でもない。地方企業のための構造再設計。福岡・熊本の経営者が選ぶ、オペレーション×マインドセット×採用の一気通貫支援。">
-  <meta name="theme-color" content="#0a0a0a">
-  <meta property="og:title" content="AIKASU｜事業が止まる前に、構造を変える。">
-  <meta property="og:description" content="地方企業のための構造再設計。福岡・熊本を中心に71社の支援実績。">
-  <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <style>
-    /* ============================================
-       AIKASU B2B LP — v5 モバイル完全対応版
-       iPhone / Android / PC 3デバイス最適化
-       ============================================ */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --primary: #0a0a0a;
-      --text: #1a1a1a;
-      --text-sub: #555555;
-      --text-light: #999999;
-      --bg: #ffffff;
-      --bg-alt: #f5f5f3;
-      --bg-dark: #0a0a0a;
-      --border: #e0e0e0;
-      --border-light: #eeeeee;
-      --line-green: #06c755;
-      --line-hover: #05a649;
-      --font: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
-      --max-w: 1040px;
-      --max-w-narrow: 720px;
-      --safe-bottom: env(safe-area-inset-bottom, 0px);
-    }
-
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.9; font-size: 15px; overflow-x: hidden; font-weight: 400; -webkit-text-size-adjust: 100%; }
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: inherit; }
-    br.pc { display: inline; }
-
-    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 48px; }
-    .container--narrow { max-width: var(--max-w-narrow); margin: 0 auto; padding: 0 48px; }
-
-    /* ---- Typography ---- */
-    .section-label {
-      font-size: 10px; font-weight: 500; letter-spacing: 0.25em;
-      text-transform: uppercase; color: var(--text-light); margin-bottom: 24px;
-    }
-    .section-headline {
-      font-size: 32px; font-weight: 900; line-height: 1.6;
-      letter-spacing: -0.01em; color: var(--primary); margin-bottom: 20px;
-    }
-    .section-sub {
-      font-size: 15px; font-weight: 300; color: var(--text-sub);
-      line-height: 1.9; max-width: 520px;
-    }
-
-    /* ---- Buttons ---- */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      font-family: var(--font); font-weight: 700; font-size: 14px;
-      text-decoration: none; border-radius: 0; padding: 16px 40px;
-      transition: all 0.2s ease; cursor: pointer; border: none;
-      letter-spacing: 0.02em; -webkit-tap-highlight-color: transparent;
-    }
-    .btn-line { background: var(--line-green); color: #fff; }
-    .btn-line:hover { background: var(--line-hover); }
-    .btn-line:active { background: #049440; transform: scale(0.98); }
-    .btn-line svg { width: 20px; height: 20px; flex-shrink: 0; }
-    .btn-dark { background: var(--primary); color: #fff; }
-    .btn-dark:hover { background: #222; }
-    .btn-outline { background: transparent; color: var(--primary); border: 1px solid var(--border); }
-    .btn-outline:hover { border-color: var(--primary); }
-    .btn-outline-white { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.25); }
-    .btn-outline-white:hover { border-color: #fff; }
-    .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-group--center { justify-content: center; }
-
-    /* ---- Sections ---- */
-    .section { padding: 100px 0; }
-    .section--alt { background: var(--bg-alt); }
-    .section--dark { background: var(--bg-dark); color: #fff; }
-    .section--dark .section-headline { color: #fff; }
-    .section--dark .section-label { color: rgba(255,255,255,.3); }
-    .divider { border: none; border-top: 1px solid var(--border-light); margin: 0; }
-
-    /* ============================================
-       STICKY CTA (Mobile)
-       ============================================ */
-    .sticky-cta {
-      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;
-      background: #fff; border-top: 1px solid var(--border);
-      padding: 10px 16px; padding-bottom: calc(10px + var(--safe-bottom));
-    }
-    .sticky-cta .btn { width: 100%; padding: 14px; font-size: 14px; border-radius: 0; }
-
-    /* ============================================
-       1. HERO
-       ============================================ */
-    .hero {
-      position: relative; min-height: 100vh; min-height: 100svh;
-      display: flex; align-items: center; overflow: hidden;
-    }
-    .hero__bg { position: absolute; inset: 0; z-index: 0; }
-    .hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
-    .hero__overlay {
-      position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(170deg, rgba(10,10,10,.88) 0%, rgba(10,10,10,.72) 50%, rgba(10,10,10,.6) 100%);
-    }
-    .hero__inner {
-      position: relative; z-index: 2; max-width: var(--max-w);
-      margin: 0 auto; padding: 0 48px; width: 100%;
-    }
-    .hero__content {
-      display: grid; grid-template-columns: 1fr 300px;
-      gap: 64px; align-items: end; padding: 140px 0 100px;
-    }
-    .hero__text { color: #fff; }
-    .hero__label {
-      font-size: 10px; font-weight: 500; letter-spacing: 0.3em;
-      color: rgba(255,255,255,.4); margin-bottom: 32px; text-transform: uppercase;
-    }
-    .hero h1 { font-size: 42px; font-weight: 900; line-height: 1.5; color: #fff; letter-spacing: -0.02em; }
-    .hero__sub { margin-top: 28px; font-size: 15px; font-weight: 300; color: rgba(255,255,255,.6); line-height: 2; }
-    .hero__tags { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
-    .hero__tag {
-      font-size: 11px; font-weight: 500; letter-spacing: 0.05em;
-      color: rgba(255,255,255,.5); padding-bottom: 4px;
-      border-bottom: 1px solid rgba(255,255,255,.15);
-    }
-    .hero .btn-group { margin-top: 44px; }
-    .hero__micro { margin-top: 14px; font-size: 11px; font-weight: 300; color: rgba(255,255,255,.3); }
-
-    /* Hero Stats Panel */
-    .hero__stats { color: #fff; padding-bottom: 8px; }
-    .hero__stats-label {
-      font-size: 10px; font-weight: 500; letter-spacing: 0.2em;
-      color: rgba(255,255,255,.3); margin-bottom: 24px; text-transform: uppercase;
-    }
-    .hero__stat-block { margin-bottom: 24px; }
-    .hero__stat-num { font-size: 56px; font-weight: 900; line-height: 1; color: #fff; letter-spacing: -0.03em; }
-    .hero__stat-unit { font-size: 16px; font-weight: 500; color: rgba(255,255,255,.4); margin-left: 2px; }
-    .hero__stat-desc { font-size: 11px; font-weight: 400; color: rgba(255,255,255,.35); margin-top: 4px; letter-spacing: 0.03em; }
-    .hero__stat-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin: 0 0 20px; }
-    .hero__stat-row { display: flex; justify-content: space-between; margin-bottom: 6px; }
-    .hero__stat-row-label { font-size: 12px; font-weight: 400; color: rgba(255,255,255,.4); }
-    .hero__stat-row-value { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.7); }
-
-    /* Mobile Stats (shown only on mobile) */
-    .hero__stats-mobile {
-      display: none;
-      margin-top: 32px;
-      padding: 20px;
-      border: 1px solid rgba(255,255,255,.1);
-    }
-    .hero__stats-mobile-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-    }
-    .hero__stats-mobile-item { text-align: center; }
-    .hero__stats-mobile-num { font-size: 32px; font-weight: 900; color: #fff; line-height: 1; }
-    .hero__stats-mobile-num span { font-size: 12px; font-weight: 500; color: rgba(255,255,255,.4); }
-    .hero__stats-mobile-caption { font-size: 10px; font-weight: 400; color: rgba(255,255,255,.35); margin-top: 4px; }
-
-    /* ============================================
-       2. NUMBERS BAR
-       ============================================ */
-    .numbers { padding: 48px 0; border-bottom: 1px solid var(--border-light); }
-    .numbers__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-    .numbers__item { text-align: center; position: relative; }
-    .numbers__item:not(:last-child)::after {
-      content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
-      width: 1px; height: 32px; background: var(--border-light);
-    }
-    .numbers__value { font-size: 36px; font-weight: 900; color: var(--primary); line-height: 1; letter-spacing: -0.03em; }
-    .numbers__value span { font-size: 14px; font-weight: 500; letter-spacing: 0; }
-    .numbers__caption { font-size: 11px; font-weight: 400; color: var(--text-light); margin-top: 8px; letter-spacing: 0.05em; }
-
-    /* ============================================
-       3. PROBLEM
-       ============================================ */
-    .problem__grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: start; margin-top: 48px;
-    }
-    .problem__body { padding-top: 4px; }
-    .problem__body p { font-size: 15px; font-weight: 300; color: var(--text-sub); margin-bottom: 12px; line-height: 2; }
-    .problem__body p:last-child { font-weight: 700; color: var(--text); font-size: 16px; margin-top: 12px; }
-    .problem__list { list-style: none; display: grid; gap: 0; }
-    .problem__list li {
-      padding: 18px 0; border-bottom: 1px solid var(--border-light);
-      font-size: 14px; font-weight: 500; color: var(--text);
-      display: flex; align-items: center; gap: 16px;
-    }
-    .problem__list li:first-child { border-top: 1px solid var(--border-light); }
-    .problem__list-num {
-      font-size: 10px; font-weight: 900; color: var(--text-light);
-      letter-spacing: 0.05em; width: 20px; flex-shrink: 0;
-    }
-
-    /* ============================================
-       4. PHILOSOPHY
-       ============================================ */
-    .philosophy { padding: 120px 0; }
-    .philosophy__inner { max-width: 600px; margin: 0 auto; text-align: center; }
-    .philosophy__lines { margin: 40px 0; display: grid; gap: 4px; }
-    .philosophy__lines p { font-size: 17px; font-weight: 300; color: var(--text-sub); }
-    .philosophy__reframe { margin-top: 48px; font-size: 20px; font-weight: 900; color: var(--primary); letter-spacing: -0.01em; }
-    .philosophy__reframe-line { display: block; width: 32px; height: 2px; background: var(--primary); margin: 20px auto 0; }
-
-    /* ============================================
-       5. TWO AXES
-       ============================================ */
-    .axes__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 48px; }
-    .axes__col { padding: 40px; }
-    .axes__col--win { border-right: 1px solid var(--border-light); }
-    .axes__col-label { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; color: var(--text-light); text-transform: uppercase; margin-bottom: 12px; }
-    .axes__col-title { font-size: 22px; font-weight: 900; color: var(--primary); margin-bottom: 28px; letter-spacing: -0.01em; }
-    .axes__col ul { list-style: none; display: grid; gap: 14px; }
-    .axes__col li { font-size: 14px; font-weight: 400; color: var(--text-sub); padding-left: 16px; position: relative; line-height: 1.7; }
-    .axes__col li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 1px; background: var(--text-light); }
-    .axes__closing { margin-top: 56px; font-size: 20px; font-weight: 900; color: var(--primary); text-align: center; letter-spacing: -0.01em; }
-
-    /* ============================================
-       6. SERVICES
-       ============================================ */
-    .services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 48px; }
-    .services__card { padding: 36px 32px; border-right: 1px solid var(--border-light); }
-    .services__card:last-child { border-right: none; }
-    .services__card-num { font-size: 32px; font-weight: 900; color: var(--border); margin-bottom: 20px; line-height: 1; }
-    .services__card-title { font-size: 16px; font-weight: 900; color: var(--primary); margin-bottom: 12px; line-height: 1.5; }
-    .services__card-desc { font-size: 13px; font-weight: 300; color: var(--text-sub); line-height: 1.8; }
-    .services__note { margin-top: 32px; font-size: 12px; font-weight: 400; color: var(--text-light); text-align: center; }
-
-    /* ============================================
-       7. CASE STUDIES
-       ============================================ */
-    .cases__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 48px; background: var(--border-light); }
-    .case-card { background: var(--bg); }
-    .case-card__img { width: 100%; height: 200px; object-fit: cover; }
-    .case-card__body { padding: 28px 28px 32px; }
-    .case-card__tag { display: inline-block; font-size: 10px; font-weight: 500; color: var(--text-light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
-    .case-card__title { font-size: 16px; font-weight: 900; color: var(--primary); line-height: 1.6; margin-bottom: 12px; }
-    .case-card__desc { font-size: 13px; font-weight: 300; color: var(--text-sub); line-height: 1.8; margin-bottom: 20px; }
-    .case-card__result {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 13px; font-weight: 700; color: var(--primary);
-      padding-bottom: 4px; border-bottom: 2px solid var(--primary);
-    }
-    .cases__more { text-align: center; margin-top: 48px; }
-
-    /* ============================================
-       8. WHY AIKASU
-       ============================================ */
-    .why__list { margin-top: 56px; display: grid; gap: 0; }
-    .why__item {
-      display: grid; grid-template-columns: 56px 1fr; gap: 24px;
-      padding: 36px 0; border-bottom: 1px solid var(--border-light); align-items: start;
-    }
-    .why__item:first-child { border-top: 1px solid var(--border-light); }
-    .why__item-num { font-size: 28px; font-weight: 900; color: var(--border); line-height: 1; }
-    .why__item-title { font-size: 16px; font-weight: 900; color: var(--primary); margin-bottom: 8px; }
-    .why__item-desc { font-size: 13px; font-weight: 300; color: var(--text-sub); line-height: 1.85; }
-
-    /* ============================================
-       9. FOUNDER / MESSAGE
-       ============================================ */
-    .founder { padding: 0; }
-    .founder__grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
-    .founder__photo { position: relative; overflow: hidden; background: #f0f0f0; }
-    .founder__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
-    .founder__content {
-      background: var(--bg-dark); color: #fff; display: flex;
-      flex-direction: column; justify-content: center; padding: 72px 56px;
-    }
-    .founder__name-block { margin-bottom: 28px; }
-    .founder__role { font-size: 11px; font-weight: 400; letter-spacing: 0.1em; color: rgba(255,255,255,.3); margin-bottom: 4px; }
-    .founder__name { font-size: 13px; font-weight: 500; color: rgba(255,255,255,.5); letter-spacing: 0.08em; }
-    .founder__headline { font-size: 26px; font-weight: 900; line-height: 1.6; color: #fff; margin-bottom: 28px; letter-spacing: -0.01em; }
-    .founder__body p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.6); margin-bottom: 10px; line-height: 2; }
-    .founder .btn-group { margin-top: 36px; }
-
-    /* ============================================
-       10. FAQ
-       ============================================ */
-    .faq__list { margin-top: 48px; }
-    .faq__item { border-bottom: 1px solid var(--border-light); }
-    .faq__item:first-child { border-top: 1px solid var(--border-light); }
-    .faq__question {
-      font-size: 14px; font-weight: 700; color: var(--primary);
-      cursor: pointer; display: flex; align-items: center; gap: 16px;
-      background: none; border: none; width: 100%; text-align: left;
-      font-family: var(--font); padding: 22px 0; -webkit-tap-highlight-color: transparent;
-    }
-    .faq__question:hover { color: var(--text-sub); }
-    .faq__question-num { font-size: 10px; font-weight: 500; color: var(--text-light); width: 20px; flex-shrink: 0; letter-spacing: 0.05em; }
-    .faq__question::after { content: '+'; margin-left: auto; font-size: 18px; font-weight: 300; color: var(--text-light); flex-shrink: 0; padding-left: 12px; }
-    .faq__question[aria-expanded="true"]::after { content: '\2212'; }
-    .faq__answer { padding: 0 0 22px 36px; font-size: 14px; font-weight: 300; color: var(--text-sub); line-height: 1.9; }
-
-    /* ============================================
-       11. FINAL CTA
-       ============================================ */
-    .final-cta { background: var(--primary); padding: 88px 0; text-align: center; color: #fff; }
-    .final-cta h2 { font-size: 28px; font-weight: 900; margin-bottom: 16px; color: #fff; letter-spacing: -0.01em; line-height: 1.6; }
-    .final-cta p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.5); margin-bottom: 36px; }
-    .final-cta .btn-line { font-size: 15px; padding: 18px 48px; }
-    .final-cta__note { margin-top: 14px; font-size: 11px; font-weight: 300; color: rgba(255,255,255,.25); }
-
-    .footer { padding: 40px; text-align: center; font-size: 11px; font-weight: 400; color: var(--text-light); letter-spacing: 0.05em; }
-
-    /* ============================================
-       RESPONSIVE — Tablet (768px)
-       ============================================ */
-    @media (max-width: 768px) {
-      .section { padding: 64px 0; }
-      .container, .container--narrow { padding: 0 24px; }
-
-      .hero { min-height: 100svh; min-height: -webkit-fill-available; }
-      .hero__bg img { object-position: center center; }
-      .hero__inner { padding: 0 24px; }
-      .hero__content { grid-template-columns: 1fr; gap: 0; padding: 100px 0 64px; }
-      .hero h1 { font-size: 28px; line-height: 1.55; }
-      .hero__stats { display: none; }
-      .hero__stats-mobile { display: block; }
-      br.pc { display: none; }
-      .hero .btn-group { flex-direction: column; }
-      .hero .btn { width: 100%; padding: 16px; }
-
-      .section-headline { font-size: 24px; }
-
-      .numbers { padding: 32px 0; }
-      .numbers__grid { grid-template-columns: repeat(2, 1fr); gap: 20px 0; }
-      .numbers__item:nth-child(2)::after { display: none; }
-      .numbers__value { font-size: 28px; }
-
-      .problem__grid { grid-template-columns: 1fr; gap: 32px; }
-      .problem__list li { padding: 16px 0; font-size: 13px; }
-
-      .philosophy { padding: 80px 0; }
-      .philosophy__lines p { font-size: 15px; }
-      .philosophy__reframe { font-size: 17px; }
-
-      .axes__grid { grid-template-columns: 1fr; }
-      .axes__col--win { border-right: none; border-bottom: 1px solid var(--border-light); }
-      .axes__col { padding: 28px 0; }
-      .axes__closing { font-size: 17px; margin-top: 36px; }
-
-      .services__grid { grid-template-columns: 1fr; }
-      .services__card { border-right: none; border-bottom: 1px solid var(--border-light); padding: 28px 0; }
-      .services__card:last-child { border-bottom: none; }
-
-      .cases__grid { grid-template-columns: 1fr; }
-      .case-card__img { height: 180px; }
-      .case-card__body { padding: 20px 20px 24px; }
-      .case-card__title { font-size: 15px; }
-      .case-card__desc { font-size: 13px; margin-bottom: 16px; }
-
-      .why__item { grid-template-columns: 36px 1fr; gap: 16px; padding: 24px 0; }
-      .why__item-num { font-size: 22px; }
-      .why__item-title { font-size: 15px; }
-
-      .founder__grid { grid-template-columns: 1fr; min-height: auto; }
-      .founder__photo { height: 400px; }
-      .founder__content { padding: 48px 24px; }
-      .founder__headline { font-size: 22px; }
-      .founder__body p { font-size: 13px; }
-
-      .btn-group { flex-direction: column; }
-      .btn-group .btn { width: 100%; }
-
-      .faq__question { font-size: 13px; padding: 18px 0; gap: 12px; }
-      .faq__answer { padding: 0 0 18px 32px; font-size: 13px; }
-
-      .final-cta { padding: 56px 0; }
-      .final-cta h2 { font-size: 22px; }
-      .final-cta .btn-line { padding: 16px 32px; font-size: 14px; }
-
-      .sticky-cta { display: block; }
-      .footer { padding: 32px 24px 72px; padding-bottom: calc(72px + var(--safe-bottom)); }
-    }
-
-    /* ============================================
-       RESPONSIVE — Small mobile (480px)
-       ============================================ */
-    @media (max-width: 480px) {
-      .container, .container--narrow { padding: 0 20px; }
-      .hero__inner { padding: 0 20px; }
-      .hero__content { padding: 80px 0 48px; }
-      .hero h1 { font-size: 24px; }
-      .hero__sub { font-size: 13px; margin-top: 20px; }
-      .hero__label { margin-bottom: 24px; font-size: 9px; }
-      .hero__tags { gap: 10px; margin-top: 20px; }
-      .hero__tag { font-size: 10px; }
-      .hero .btn-group { margin-top: 32px; }
-      .hero__stats-mobile { padding: 16px; margin-top: 24px; }
-      .hero__stats-mobile-num { font-size: 26px; }
-
-      .section { padding: 48px 0; }
-      .section-headline { font-size: 21px; line-height: 1.65; }
-      .section-label { margin-bottom: 16px; }
-      .section-sub { font-size: 13px; }
-
-      .numbers { padding: 24px 0; }
-      .numbers__grid { gap: 16px 0; }
-      .numbers__value { font-size: 24px; }
-      .numbers__caption { font-size: 10px; }
-
-      .problem__body p { font-size: 13px; }
-      .problem__list li { font-size: 13px; gap: 12px; }
-
-      .philosophy { padding: 56px 0; }
-      .philosophy__lines p { font-size: 14px; }
-      .philosophy__reframe { font-size: 16px; margin-top: 32px; }
-
-      .axes__col-title { font-size: 19px; margin-bottom: 20px; }
-      .axes__col li { font-size: 13px; }
-
-      .services__card-num { font-size: 28px; }
-      .services__card-title { font-size: 15px; }
-      .services__card-desc { font-size: 12px; }
-
-      .case-card__img { height: 160px; }
-
-      .founder__photo { height: 320px; }
-      .founder__content { padding: 36px 20px; }
-      .founder__headline { font-size: 20px; }
-      .founder__body p { font-size: 12px; line-height: 1.9; }
-
-      .final-cta { padding: 48px 0; }
-      .final-cta h2 { font-size: 20px; }
-      .final-cta p { font-size: 13px; margin-bottom: 28px; }
-      .final-cta .btn-line { width: 100%; padding: 16px; font-size: 14px; }
-    }
-
-    /* ============================================
-       RESPONSIVE — Large desktop (1200px+)
-       ============================================ */
-    @media (min-width: 1200px) {
-      .hero h1 { font-size: 48px; }
-      .section-headline { font-size: 36px; }
-      .hero__stat-num { font-size: 64px; }
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AIKASU | 人材紹介では、会社は変わりません。</title>
+<meta name="description" content="人口減少・人件費上昇の不可逆未来。AIKASUはオペレーション再構築から人材配置・教育・運用まで一貫して担う、企業のアクセルを踏むための外部組織です。"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#0B1020;--navy:#0B1F3B;--blue:#2F6BFF;--bg:#FFFFFF;--muted:#F5F7FB;--sub:#6B7394;--line:rgba(11,31,59,.14);--r:14px;--max:1080px}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.sec{padding:140px 0}
+/* ---- Line break control ---- */
+.pc-br{display:inline}
+.sp-br{display:none}
+/* ---- Typography ---- */
+.en-label{font-size:14px;font-weight:900;letter-spacing:.15em;color:var(--blue);text-transform:uppercase;margin-bottom:12px}
+.sec-title{font-size:clamp(30px,4vw,48px);font-weight:900;line-height:1.18;letter-spacing:-.025em;margin-bottom:20px}
+.sec-desc{color:var(--sub);font-size:16px;max-width:55ch;margin-bottom:48px;line-height:1.9}
+.num{font-size:14px;font-weight:900;letter-spacing:.1em;color:var(--blue)}
+/* ---- Statement Band ---- */
+.statement{padding:80px 0;text-align:center}
+.statement-dark{background:var(--navy);color:#fff}
+.statement-ink{background:var(--ink);color:#fff}
+.statement p{font-size:clamp(26px,4.5vw,52px);font-weight:900;line-height:1.2;letter-spacing:-.02em}
+/* ---- Buttons ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 32px;font-weight:700;font-size:15px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;white-space:nowrap;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 6px 20px rgba(47,107,255,.25)}
+.btn-secondary{background:var(--bg);color:var(--navy);border:2px solid var(--line)}
+.btn-white{background:#fff;color:var(--navy);border:2px solid var(--line)}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.3)}.btn-ghost:hover{border-color:#fff}
+/* ---- Topbar ---- */
+.topbar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:15px;letter-spacing:.02em}
+.brand img{height:28px;width:auto;border-radius:6px}
+.nav{display:flex;gap:4px;font-size:12px;font-weight:700;color:var(--sub);letter-spacing:.04em}
+.nav a{padding:6px 10px;border-radius:8px;transition:color .12s}.nav a:hover{color:var(--ink)}
+.top-cta{display:flex;gap:8px}.top-cta .btn{padding:8px 18px;font-size:12px}
+/* ---- Hero ---- */
+.hero{min-height:92vh;background:var(--ink);color:#fff;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-inner{position:relative;z-index:2;max-width:700px}
+.hero-badge{display:inline-block;padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);font-weight:700;font-size:12px;letter-spacing:.06em;margin-bottom:40px}
+.hero h1{font-size:clamp(38px,7vw,76px);font-weight:900;line-height:1.08;letter-spacing:-.035em;margin-bottom:28px}
+.hero-sub{font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,.5);line-height:2;margin-bottom:48px}
+.hero-sub strong{color:rgba(255,255,255,.95)}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-svg{position:absolute;right:-20px;top:50%;transform:translateY(-50%);width:48%;max-width:560px;opacity:.35;z-index:1}
+/* ---- News ---- */
+.news-list{display:flex;flex-direction:column;gap:0}
+.news-row{display:flex;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.news-row:first-child{padding-top:0}
+.news-date{font-size:12px;font-weight:700;color:var(--sub);white-space:nowrap;min-width:100px}
+.news-cat{font-size:11px;font-weight:800;color:var(--blue);padding:2px 8px;border-radius:999px;border:1px solid rgba(47,107,255,.2);white-space:nowrap}
+.news-title{font-size:14px;font-weight:500;flex:1;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.news-more{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--blue);margin-top:20px}
+/* ---- Who We Are ---- */
+.who-eng{font-size:clamp(36px,6vw,72px);font-weight:900;line-height:1.05;letter-spacing:-.04em;margin-bottom:48px;color:var(--ink)}
+.who-eng span{display:block}
+.who-lines{display:flex;flex-direction:column;gap:4px;margin-bottom:48px}
+.who-lines p{font-size:clamp(15px,1.5vw,18px);color:var(--sub);line-height:2}
+.who-lines p:empty{height:1em}
+.who-big{font-size:clamp(30px,4vw,52px);font-weight:900;line-height:1.2;letter-spacing:-.025em}
+/* ---- MVT (Mission / Vision / Tagline) ---- */
+.mvt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:40px}
+.mvt-item{padding:32px 24px;border-right:1px solid var(--line)}
+.mvt-item:last-child{border-right:none}
+.mvt-label{font-size:12px;font-weight:900;letter-spacing:.15em;color:var(--blue);text-transform:uppercase;margin-bottom:12px}
+.mvt-item p{font-size:15px;font-weight:700;color:var(--navy);line-height:1.8;margin:0}
+/* ---- Business ---- */
+.biz-grid{display:grid;gap:0;border-top:1px solid var(--line)}
+.biz-item{display:grid;grid-template-columns:60px 1fr;gap:20px;padding:32px 0;border-bottom:1px solid var(--line);align-items:start}
+.biz-item .num{font-size:14px;padding-top:2px}
+.biz-item h3{font-size:clamp(18px,2vw,22px);font-weight:900;margin-bottom:6px}
+.biz-item p{color:var(--sub);font-size:14px;max-width:55ch}
+/* ---- Winning Model ---- */
+.wm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.wm-card{padding:32px 24px;border:1px solid var(--line);border-radius:var(--r)}
+.wm-card .num{margin-bottom:12px}
+.wm-card h3{font-size:20px;font-weight:900;margin-bottom:10px}
+.wm-card p{color:var(--sub);font-size:14px}
+/* ---- Achievement (Tabs + Cards) ---- */
+.ach-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.ach-tab{padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg);font-weight:700;font-size:12px;color:var(--sub);cursor:pointer;transition:all .12s;font-family:inherit}
+.ach-tab:hover{color:var(--navy);border-color:var(--navy)}
+.ach-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.ach-card{border:1px solid var(--line);border-radius:var(--r);display:flex;flex-direction:column;gap:0;overflow:hidden}
+.ach-card-img{width:100%;height:180px;object-fit:cover;border-bottom:1px solid var(--line)}
+.ach-card-img-ph{width:100%;height:180px;background:linear-gradient(135deg,var(--navy),var(--blue));display:grid;place-items:center;color:rgba(255,255,255,.5);font-size:13px;font-weight:700;border-bottom:1px solid var(--line)}
+.ach-card-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.ach-card .ach-cats{display:flex;gap:5px;flex-wrap:wrap}
+.ach-tag{font-size:10px;padding:2px 7px;border-radius:999px;background:rgba(47,107,255,.06);border:1px solid rgba(47,107,255,.15);color:var(--blue);font-weight:800}
+.ach-card .ach-industry{font-size:12px;color:var(--sub)}
+.ach-card .ach-result{font-size:20px;font-weight:900;color:var(--navy);line-height:1.3}
+.ach-card .ach-detail{font-size:13px;color:var(--sub);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ach-card .ach-title{font-size:16px;font-weight:900;color:var(--navy);line-height:1.4}
+.ach-card .ach-meta{font-size:12px;color:var(--sub);display:flex;gap:12px}
+.ach-card .ach-period{color:var(--blue);font-weight:700}
+/* ---- TO WIN PROJECT (large cards) ---- */
+.twp-grid{display:grid;gap:16px}
+.twp-card{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.twp-cell{padding:24px}
+.twp-cell:not(:last-child){border-right:1px solid var(--line)}
+.twp-cell-label{font-size:11px;font-weight:900;color:var(--blue);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.twp-cell-val{font-size:14px;line-height:1.6}
+.twp-cell-val strong{font-size:22px;color:var(--navy);display:block;margin-top:4px}
+/* ---- Talent Pool ---- */
+.tp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tp-card{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.tp-card img{width:100%;height:140px;object-fit:cover;border-bottom:1px solid var(--line)}
+.tp-ph{width:100%;height:140px;background:var(--muted);display:grid;place-items:center;color:var(--sub);font-size:12px;border-bottom:1px solid var(--line)}
+.tp-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tp-card h3{font-size:16px;font-weight:900;color:var(--navy);margin:0}
+.tp-desc{color:var(--sub);font-size:13px;margin:0}
+.tp-meaning{font-size:13px;margin:0}
+.tp-pos{font-size:11px;padding:5px 10px;border-radius:999px;background:rgba(47,107,255,.05);border:1px solid rgba(47,107,255,.12);color:var(--blue);font-weight:800;text-align:center;margin-top:auto}
+.tp-note{margin-top:20px;padding:16px;border:1px solid var(--line);border-radius:var(--r)}
+.tp-note p{font-weight:700;color:var(--navy);font-size:14px;margin:0}
+/* ---- Company ---- */
+.co-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.co-card{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.co-card-img{height:140px;background:var(--muted);display:grid;place-items:center;color:var(--sub);font-size:13px;border-bottom:1px solid var(--line)}
+.co-card-img--logo{background:#fff;padding:24px}
+.co-card-img--logo img{max-height:60px;width:auto;margin:0 auto}
+.co-card-img--white{background:#fff;color:var(--ink);font-size:20px;font-weight:900;letter-spacing:.02em}
+.co-card-body{padding:24px}
+.co-card-body h3{font-size:18px;font-weight:900;margin:0 0 8px}
+.co-card-body p{color:var(--sub);font-size:14px;margin:0;line-height:1.8}
+/* ---- Past Works (carousel) ---- */
+.pw-outer{position:relative;padding:0 24px}
+.pw-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:4px 0 14px;cursor:grab}
+.pw-track:active{cursor:grabbing}
+.pw-track::-webkit-scrollbar{height:4px}.pw-track::-webkit-scrollbar-thumb{background:rgba(11,31,59,.15);border-radius:2px}
+.pw-card{flex:0 0 280px;scroll-snap-align:start;border:1px solid var(--line);border-radius:var(--r);display:flex;flex-direction:column;gap:0;min-height:200px;transition:border-color .12s;overflow:hidden}
+.pw-card-img{width:100%;height:140px;object-fit:cover;border-bottom:1px solid var(--line)}
+.pw-card-img-ph{width:100%;height:140px;background:var(--muted);display:grid;place-items:center;color:var(--sub);font-size:11px;border-bottom:1px solid var(--line)}
+.pw-card-body{padding:14px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pw-card:hover{border-color:var(--navy)}
+.pw-media{font-size:11px;font-weight:800;color:var(--blue);padding:2px 8px;border-radius:999px;background:rgba(47,107,255,.06);border:1px solid rgba(47,107,255,.12);align-self:flex-start}
+.pw-date{font-size:11px;color:var(--sub)}
+.pw-card h4{font-size:14px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.pw-summary{color:var(--sub);font-size:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.pw-link{margin-top:auto;color:var(--blue);font-weight:700;font-size:12px}
+.pw-btn{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;font-weight:900;color:var(--navy);font-size:14px;display:grid;place-items:center;z-index:2;font-family:inherit}
+.pw-btn:hover{background:var(--muted)}
+/* ---- ROI ---- */
+.roi-area{display:grid;grid-template-columns:1fr 60px 1fr;gap:16px;align-items:stretch}
+/* ---- Contact CTA ---- */
+.contact-sec{background:var(--ink);color:#fff;padding:120px 0;text-align:center}
+.contact-sec .en-label{color:rgba(255,255,255,.3)}
+.contact-sec h2{font-size:clamp(24px,3.5vw,42px);font-weight:900;margin-bottom:16px;line-height:1.3}
+.contact-sec p{color:rgba(255,255,255,.45);margin-bottom:40px;font-size:16px;line-height:1.9}
+/* ---- FAQ ---- */
+.faq-list{display:grid;gap:10px;max-width:800px}
+details{border:1px solid var(--line);border-radius:var(--r);padding:16px 20px}
+summary{cursor:pointer;list-style:none;font-weight:800;color:var(--navy);display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:15px}
+summary::-webkit-details-marker{display:none}
+.faq-list p{margin:12px 0 0;color:var(--sub);font-size:14px;line-height:1.7}
+/* ---- Footer ---- */
+footer{padding:40px 0;font-size:12px;color:var(--sub);border-top:1px solid var(--line)}
+.footer-inner{display:flex;justify-content:space-between;align-items:start;gap:24px;flex-wrap:wrap}
+.footer-info{display:flex;flex-direction:column;gap:3px}
+.footer-info a{color:var(--blue);font-weight:700}
+.footer-nav{display:flex;gap:20px;font-size:12px;font-weight:700;color:var(--sub);flex-wrap:wrap}
+.footer-nav a:hover{color:var(--ink)}
+/* ---- Mobile CTA ---- */
+.mobile-cta{display:none}
+/* ---- Responsive ---- */
+@media(max-width:980px){
+  .sec{padding:88px 0}
+  .statement{padding:64px 0}
+  .hero{min-height:88vh}.hero h1{font-size:clamp(32px,8vw,52px)}
+  .hero-sub{font-size:15px;line-height:2.2}
+  .hero-svg{display:none}
+  .nav{display:none}
+  .top-cta .btn-secondary{display:none}
+  .wm-grid,.co-grid,.tp-grid,.mvt-grid{grid-template-columns:1fr}
+  .mvt-item{border-right:none;border-bottom:1px solid var(--line)}.mvt-item:last-child{border-bottom:none}
+  .ach-grid{grid-template-columns:1fr}
+  .ach-card-img,.ach-card-img-ph{height:160px}
+  .twp-card{grid-template-columns:1fr}.twp-cell:not(:last-child){border-right:none;border-bottom:1px solid var(--line)}
+  .roi-area{grid-template-columns:1fr}.roi-area>div:nth-child(2){height:48px;border-radius:var(--r)}
+  .pw-outer{padding:0}.pw-btn{display:none}
+  .contact-sec{padding:88px 0}
+  .footer-inner{flex-direction:column}
+  .pc-br{display:none}
+  .sp-br{display:inline}
+  .mobile-cta{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px;gap:10px}
+  .mcta{flex:1;text-align:center;padding:13px;border-radius:999px;font-weight:700;font-size:14px;font-family:inherit;border:none;cursor:pointer;display:block}
+  .mcta-p{background:var(--blue);color:#fff}
+  .mcta-g{background:var(--bg);border:2px solid var(--line);color:var(--navy)}
+  body{padding-bottom:68px}
+  .sec-title{margin-bottom:16px}
+  .sec-desc{margin-bottom:36px;font-size:15px;line-height:2}
+  .who-eng{margin-bottom:36px}
+  .who-lines p{font-size:15px;line-height:2.2}
+  .who-lines p:empty{height:.8em}
+  .who-big{line-height:1.3}
+  .biz-item{padding:24px 0}
+  .biz-item h3{margin-bottom:8px}
+  .biz-item p{font-size:13px;line-height:1.8}
+  .wm-card{padding:24px 20px}
+  .wm-card h3{font-size:18px}
+  .wm-card p{font-size:13px}
+}
+@media(max-width:520px){
+  .wrap{padding:0 20px}
+  .sec{padding:64px 0}
+  .statement{padding:48px 0}
+  .statement p{font-size:clamp(22px,6.5vw,34px);line-height:1.3}
+  /* ---- Hero SP ---- */
+  .hero{min-height:85vh}
+  .hero-badge{margin-bottom:24px;font-size:11px;padding:6px 14px}
+  .hero h1{font-size:clamp(30px,8.5vw,44px);margin-bottom:18px}
+  .hero-sub{font-size:14px;line-height:2;margin-bottom:32px}
+  .hero-cta{flex-direction:column;gap:10px}.hero-cta .btn{width:100%;padding:14px 24px;font-size:14px}
+  /* ---- News SP ---- */
+  .news-row{flex-wrap:wrap;gap:6px;padding:14px 0}
+  .news-date{min-width:auto;font-size:11px}
+  .news-cat{font-size:10px}
+  .news-title{font-size:13px}
+  /* ---- WHO WE ARE SP ---- */
+  .who-eng{font-size:clamp(28px,9vw,44px);margin-bottom:24px;letter-spacing:-.03em}
+  .who-lines{gap:2px;margin-bottom:28px}
+  .who-lines p{font-size:14px;line-height:2.1}
+  .who-lines p:empty{height:.6em}
+  /* ---- en-label / sec SP ---- */
+  .en-label{margin-bottom:8px;font-size:12px}
+  .sec-title{font-size:clamp(24px,6vw,32px)}
+  .sec-desc{font-size:14px;line-height:1.9;margin-bottom:28px}
+  /* ---- Business SP ---- */
+  .biz-item{grid-template-columns:36px 1fr;gap:12px;padding:20px 0}
+  .biz-item h3{font-size:16px}
+  .biz-item p{font-size:13px}
+  /* ---- Achievement SP ---- */
+  .ach-card-img,.ach-card-img-ph{height:140px}
+  .ach-card-body{padding:16px}
+  .ach-card .ach-title{font-size:15px}
+  .ach-card .ach-result{font-size:17px}
+  .ach-card .ach-detail{font-size:12px}
+  .ach-card .ach-meta{font-size:11px}
+  .ach-tab{padding:6px 12px;font-size:11px}
+  /* ---- TWP SP ---- */
+  .twp-cell{padding:16px}
+  .twp-cell-val{font-size:13px;line-height:1.5}
+  .twp-cell-val strong{font-size:18px}
+  /* ---- MVT SP ---- */
+  .mvt-item{padding:24px 20px}
+  .mvt-item p{font-size:14px;line-height:1.7}
+  /* ---- Company SP ---- */
+  .co-card-body{padding:20px}
+  .co-card-body h3{font-size:16px}
+  .co-card-body p{font-size:13px}
+  .co-card-img--white{font-size:18px}
+  .co-card-img--logo img{max-height:48px}
+  /* ---- Talent Pool SP ---- */
+  .tp-body{padding:16px}
+  .tp-card h3{font-size:15px}
+  .tp-desc,.tp-meaning{font-size:12px}
+  /* ---- Past Works SP ---- */
+  .pw-card{flex:0 0 260px}
+  .pw-card-img,.pw-card-img-ph{height:120px}
+  .pw-card-body{padding:12px 14px 16px}
+  .pw-card h4{font-size:13px}
+  /* ---- ROI SP ---- */
+  .roi-area div h3{font-size:14px !important}
+  .roi-area div div{font-size:24px !important}
+  .roi-area div p{font-size:12px !important}
+  /* ---- FAQ SP ---- */
+  details{padding:14px 16px}
+  summary{font-size:14px}
+  .faq-list p{font-size:13px}
+  /* ---- Contact SP ---- */
+  .contact-sec{padding:64px 0}
+  .contact-sec h2{font-size:clamp(22px,5.5vw,30px);line-height:1.4}
+  .contact-sec p{font-size:14px;line-height:1.8;margin-bottom:32px}
+  .contact-sec .btn{padding:14px 24px;font-size:14px}
+  /* ---- Footer SP ---- */
+  .footer-info{font-size:11px}
+  .footer-nav{gap:14px;font-size:11px}
+}
+</style>
 </head>
 <body>
-
-  <!-- 1. HERO -->
-  <section class="hero" id="hero">
-    <div class="hero__bg">
-      <img src="S__63799321_0.jpg" alt="AIKASUセミナー風景" loading="eager">
-    </div>
-    <div class="hero__overlay"></div>
-    <div class="hero__inner">
-      <div class="hero__content">
-        <div class="hero__text">
-          <p class="hero__label">Structural Redesign for Local Business</p>
-          <h1>事業が止まる原因は、<br class="pc">人でも戦略でもない。</h1>
-          <p class="hero__sub">企業経営の「今後」を安心させる。<br class="pc">地方企業のための、構造再設計。</p>
-          <div class="hero__tags">
-            <span class="hero__tag">事業と業務構造の再設計</span>
-            <span class="hero__tag">実行伴走・成果重視</span>
-            <span class="hero__tag">採用まで一気通貫</span>
-          </div>
-          <!-- Mobile Stats -->
-          <div class="hero__stats-mobile">
-            <div class="hero__stats-mobile-grid">
-              <div class="hero__stats-mobile-item">
-                <div class="hero__stats-mobile-num">71<span>社</span></div>
-                <div class="hero__stats-mobile-caption">支援実績</div>
-              </div>
-              <div class="hero__stats-mobile-item">
-                <div class="hero__stats-mobile-num">93<span>%</span></div>
-                <div class="hero__stats-mobile-caption">改善完了率</div>
-              </div>
-            </div>
-          </div>
-          <div class="btn-group">
-            <a href="https://lin.ee/589jqjwp" class="btn btn-line" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-              LINEで無料相談する
-            </a>
-            <a href="https://lin.ee/589jqjwp" class="btn btn-outline-white" target="_blank" rel="noopener">長田と30分、壁打ちする</a>
-          </div>
-          <p class="hero__micro">※ 無料・秘密厳守。まずは現状の整理から。</p>
-        </div>
-        <div class="hero__stats">
-          <p class="hero__stats-label">Track Record</p>
-          <div class="hero__stat-block">
-            <div><span class="hero__stat-num">71</span><span class="hero__stat-unit">社</span></div>
-            <p class="hero__stat-desc">九州エリアの支援実績</p>
-          </div>
-          <hr class="hero__stat-divider">
-          <div class="hero__stat-row"><span class="hero__stat-row-label">改善完了</span><span class="hero__stat-row-value">93%（66社）</span></div>
-          <div class="hero__stat-row"><span class="hero__stat-row-label">改善中</span><span class="hero__stat-row-value">7%（5社）</span></div>
-          <div class="hero__stat-row"><span class="hero__stat-row-label">拠点</span><span class="hero__stat-row-value">福岡・熊本</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. NUMBERS -->
-  <div class="numbers">
-    <div class="container">
-      <div class="numbers__grid">
-        <div class="numbers__item"><div class="numbers__value">71<span>社</span></div><div class="numbers__caption">支援実績</div></div>
-        <div class="numbers__item"><div class="numbers__value">93<span>%</span></div><div class="numbers__caption">改善完了率</div></div>
-        <div class="numbers__item"><div class="numbers__value">66<span>社</span></div><div class="numbers__caption">改善完了</div></div>
-        <div class="numbers__item"><div class="numbers__value">5<span>社</span></div><div class="numbers__caption">改善中</div></div>
-      </div>
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+<div class="wrap">
+<div class="topbar-inner">
+  <div class="brand"><img src="images/AIKASUlogo.png" alt="AIKASU" onerror="this.style.display='none'"></div>
+  <nav class="nav">
+    <a href="#news">NEWS</a><a href="#who">WHO WE ARE</a><a href="#business">BUSINESS</a><a href="#achievement">ACHIEVEMENT</a><a href="#talent-pool">TALENT POOL</a><a href="#company">COMPANY</a><a href="#contact">CONTACT</a>
+  </nav>
+  <div class="top-cta">
+    <a class="btn btn-secondary" href="#download" style="padding:8px 18px;font-size:12px">資料DL</a>
+    <a class="btn btn-primary" href="#contact" style="padding:8px 18px;font-size:12px">お問い合わせ</a>
+  </div>
+</div>
+</div>
+</div>
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+<div class="wrap">
+<div class="hero-inner">
+  <div class="hero-badge">不可逆未来 × 仕組み先行 × 低リスク実行</div>
+  <h1>人材紹介では、<br>会社は<br class="sp-br">変わりません。</h1>
+  <div class="hero-sub">
+    人口は減り続ける。<br>
+    人件費は上がり続ける。<br>
+    <br>
+    必要なのは、人ではなく<br class="sp-br"><strong>"仕組みと実行"</strong>。
+  </div>
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="#contact">無料相談はこちら →</a>
+    <a class="btn btn-ghost" href="#download">サービス資料をDL →</a>
+  </div>
+</div>
+</div>
+<svg class="hero-svg" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M80 550L260 130" stroke="rgba(47,107,255,.2)" stroke-width="2"/>
+  <path d="M160 550L400 60" stroke="rgba(47,107,255,.35)" stroke-width="2.5"/>
+  <path d="M300 550L480 180" stroke="rgba(47,107,255,.15)" stroke-width="2"/>
+  <path d="M420 550L540 260" stroke="rgba(47,107,255,.1)" stroke-width="1.5"/>
+  <polygon points="400,60 391,88 409,88" fill="rgba(47,107,255,.35)"/>
+  <polygon points="260,130 251,158 269,158" fill="rgba(47,107,255,.2)"/>
+  <circle cx="400" cy="60" r="30" stroke="rgba(47,107,255,.18)" stroke-width="1.5" fill="none"/>
+  <circle cx="400" cy="60" r="55" stroke="rgba(47,107,255,.08)" stroke-width="1" fill="none"/>
+</svg>
+</section>
+<!-- ===== NEWS ===== -->
+<section class="sec" id="news">
+<div class="wrap">
+  <div class="en-label">NEWS</div>
+  <h2 class="sec-title">お知らせ</h2>
+  <div class="news-list" id="newsList"></div>
+  <a class="news-more" href="#past-works">一覧を見る →</a>
+</div>
+</section>
+<!-- ===== WHO WE ARE ===== -->
+<section class="sec" id="who" style="background:var(--muted)">
+<div class="wrap">
+  <div class="en-label">WHO WE ARE?</div>
+  <h2 class="who-eng"><span>Operation First.</span><span>Human Second.</span></h2>
+  <div class="who-lines">
+    <p>企業の成長は、人ではなく<br class="sp-br">オペレーションで決まります。</p>
+    <p>曖昧な業務オペレーションのまま<br class="sp-br">人を増やしても、成果は生まれません。</p>
+    <p></p>
+    <p>会社を伸ばすには、<br class="sp-br">まず仕組みを整え、次に人を配置する。</p>
+    <p>それが最も合理的で、<br class="sp-br">最も人を活かす方法です。</p>
+    <p></p>
+    <p>AIKASUはオペレーションから<br class="sp-br">企業を変えます。</p>
+  </div>
+</div>
+</section>
+<!-- ===== STATEMENT 1 ===== -->
+<section class="statement statement-ink">
+<div class="wrap">
+  <p>ただ人を入れても、<br class="sp-br">業績は変わらない。</p>
+</div>
+</section>
+<!-- ===== BUSINESS ===== -->
+<section class="sec" id="business">
+<div class="wrap">
+  <div class="en-label">BUSINESS</div>
+  <h2 class="sec-title">AIKASUの事業</h2>
+  <p class="sec-desc">人材会社でも、代行会社でも、<br class="sp-br">コンサル会社でもありません。<br>仕組みを作り、<br class="sp-br">実行まで担う。</p>
+  <div class="biz-grid">
+    <div class="biz-item"><div class="num">01</div><div><h3>オペレーション再構築</h3><p>業務整理・設計・標準化・KPIを定義し、再現性ある型を作ります。企業の状況に応じて内製化/外部委託/ハイブリッドを設計。</p></div></div>
+    <div class="biz-item"><div class="num">02</div><div><h3>採用オペレーション</h3><p>求人票作成・スカウト運用・面談調整・オペレーション標準化。採用の「仕組み」を固め、属人化を排除します。</p></div></div>
+    <div class="biz-item"><div class="num">03</div><div><h3>営業オペレーション</h3><p>リスト作成・DM・架電・日程調整・KPI設計。営業の再現性を担保し、成果が人に依存しない構造を作ります。</p></div></div>
+    <div class="biz-item"><div class="num">04</div><div><h3>マーケ実行（LINE / 広告）</h3><p>LINE構築・シナリオ配信・広告運用・クリエイティブ制作。集客から育成まで一貫したマーケオペレーションを設計・運用。</p></div></div>
+    <div class="biz-item"><div class="num">05</div><div><h3>研修設計・運営</h3><p>新入社員研修から管理職向けまで。体験型・合同型の研修を設計・運営。研修単体のご相談も可能です。</p></div></div>
+  </div>
+</div>
+</section>
+<!-- ===== STATEMENT 2 ===== -->
+<section class="statement statement-dark">
+<div class="wrap">
+  <p>変えるべきは、<br class="sp-br">まずオペレーションです。</p>
+</div>
+</section>
+<!-- ===== WINNING MODEL ===== -->
+<section class="sec" id="winning-model" style="background:var(--muted)">
+<div class="wrap">
+  <div class="en-label">WINNING MODEL</div>
+  <h2 class="sec-title">AIKASUが<br class="sp-br">成果を出せる理由</h2>
+  <p class="sec-desc">設計だけでは変わらない。<br>実行だけでは続かない。<br>人材だけでは仕組みがない。<br class="pc-br"><br>3つを統合するから、<br class="sp-br">成果が出る。</p>
+  <div class="wm-grid">
+    <div class="wm-card"><div class="num">01</div><h3>設計</h3><p>業務分解・KPI定義・標準化。現場の属人性を排除し、誰がやっても成果が出る型を作る。</p></div>
+    <div class="wm-card"><div class="num">02</div><h3>実行</h3><p>設計した型を変動費で運用代行。固定費を増やさず、必要な分だけ実行力を確保。</p></div>
+    <div class="wm-card"><div class="num">03</div><h3>人材プール<br><span style="font-size:14px;color:var(--blue)">KININARU</span></h3><p>インターン→実働→キャリア支援の3レイヤーで母集団形成から定着まで一貫カバー。</p></div>
+  </div>
+</div>
+</section>
+<!-- ===== ACHIEVEMENT ===== -->
+<section class="sec" id="achievement">
+<div class="wrap">
+  <div class="en-label">ACHIEVEMENT</div>
+  <h2 class="sec-title">成果事例</h2>
+  <p class="sec-desc">結果が、すべてを証明する。<br>実際の支援事例を<br class="sp-br">戦略カテゴリ別に紹介。</p>
+  <div class="ach-tabs" id="achTabs"></div>
+  <div class="ach-grid" id="achGrid"></div>
+</div>
+</section>
+<!-- ===== TO WIN PROJECT ===== -->
+<section class="sec" id="to-win" style="background:var(--muted)">
+<div class="wrap">
+  <div class="en-label">TO WIN PROJECT</div>
+  <h2 class="sec-title">勝利の<br class="sp-br">プロジェクト</h2>
+  <p class="sec-desc">課題 → 作戦 → 結果。<br>1枚で全体像を<br class="sp-br">把握する。</p>
+  <div class="twp-grid" id="twpGrid"></div>
+</div>
+</section>
+<!-- ===== TALENT POOL ===== -->
+<section class="sec" id="talent-pool">
+<div class="wrap">
+  <div class="en-label">TALENT POOL</div>
+  <h2 class="sec-title">実働人材プール<br class="sp-br">KININARU</h2>
+  <p class="sec-desc">母集団形成から<br class="sp-br">実働・定着まで。<br>AIKASUの人材パイプライン。</p>
+  <div class="tp-grid" id="talentGrid"></div>
+  <div class="tp-note"><p>実働で見極めた人材がいれば、採用支援まで接続可能です。</p></div>
+</div>
+</section>
+<!-- ===== COMPANY ===== -->
+<section class="sec" id="company" style="background:var(--muted)">
+<div class="wrap">
+  <div class="en-label">COMPANY</div>
+  <h2 class="sec-title">企業情報</h2>
+  <div class="mvt-grid">
+    <div class="mvt-item"><div class="mvt-label">MISSION</div><p>企業の成長は人ではなく仕組みで決まる。<br>私たちはオペレーションから企業を変える。</p></div>
+    <div class="mvt-item"><div class="mvt-label">VISION</div><p>すべての企業が、<br class="sp-br">アクセルを踏める社会へ。</p></div>
+    <div class="mvt-item"><div class="mvt-label">TAGLINE</div><p>企業のアクセルを踏むための、<br class="sp-br">実行チーム</p></div>
+  </div>
+  <div class="co-grid">
+    <div class="co-card"><div class="co-card-img co-card-img--logo"><img src="images/AIKASUlogo.png" alt="AIKASU" onerror="this.parentElement.textContent='AIKASU'"></div><div class="co-card-body"><h3>株式会社AIKASU</h3><p>代表取締役 長田政也<br>福岡県福岡市南区高宮3丁目7-3<br>アクアマリン高宮302号</p></div></div>
+    <div class="co-card"><div class="co-card-img co-card-img--white">代表紹介</div><div class="co-card-body"><h3>長田 政也</h3><p>オペレーション再構築・<br class="sp-br">事業承継・M&Aを軸に、<br>地方企業の成長を支援。</p></div></div>
+  </div>
+</div>
+</section>
+<!-- ===== STATEMENT 3 ===== -->
+<section class="statement statement-ink">
+<div class="wrap">
+  <p>アクセルを踏めた<br class="sp-br">変革事例</p>
+</div>
+</section>
+<!-- ===== PAST WORKS ===== -->
+<section class="sec" id="past-works">
+<div class="wrap">
+  <div class="en-label">PAST WORKS</div>
+  <h2 class="sec-title">過去の取り組み</h2>
+  <p class="sec-desc">メディア掲載・セミナー登壇・<br class="sp-br">プレスリリース等の実績。</p>
+  <div class="pw-outer">
+    <button class="pw-btn" style="left:-6px" id="pwPrev" aria-label="前へ">←</button>
+    <div class="pw-track" id="pwTrack"></div>
+    <button class="pw-btn" style="right:-6px" id="pwNext" aria-label="次へ">→</button>
+  </div>
+  <p style="color:var(--sub);font-size:11px;margin-top:14px">※肩書は活動当時のものです</p>
+</div>
+</section>
+<!-- ===== ROI ===== -->
+<section class="sec" id="roi" style="background:var(--muted)">
+<div class="wrap">
+  <div class="en-label">ROI</div>
+  <h2 class="sec-title">固定費から<br class="sp-br">変動費へ</h2>
+  <p class="sec-desc">人を入れて成果が出ない<br class="sp-br">最大のリスクは、<br>「生産性が低いまま<br class="sp-br">固定費だけが増えること」。</p>
+  <div class="roi-area" id="roiArea">
+    <div style="padding:24px;border:1px solid var(--line);border-radius:var(--r)"><h3 style="font-size:15px;margin-bottom:8px">採用担当を1名増やす場合</h3><div style="font-size:28px;font-weight:900;margin:4px 0">年400〜600万+</div><p style="color:var(--sub);font-size:13px">採用コスト / 教育コスト / 社会保険 / 属人化リスク</p></div>
+    <div style="display:grid;place-items:center;border-radius:999px;background:rgba(47,107,255,.08);border:1px solid rgba(47,107,255,.15);color:var(--blue);font-weight:900;font-size:20px">→</div>
+    <div style="padding:24px;border:2px solid var(--blue);border-radius:var(--r)"><h3 style="font-size:15px;margin-bottom:8px">AIKASUを活用する場合</h3><div style="font-size:28px;font-weight:900;color:var(--blue);margin:4px 0">月20万〜</div><p style="color:var(--sub);font-size:13px">仕組み先行で生産性を上げ、状況により運用まで変動費化</p></div>
+  </div>
+</div>
+</section>
+<!-- ===== FAQ ===== -->
+<section class="sec" id="faq">
+<div class="wrap">
+  <div class="en-label">FAQ</div>
+  <h2 class="sec-title">よくある質問</h2>
+  <div class="faq-list">
+    <details><summary>どんな企業が対象ですか？ <span>＋</span></summary><p>人材不足や業務効率、採用・営業・マーケの実行に課題がある企業様が対象です。業種は問いません。</p></details>
+    <details><summary>どこまで任せられますか？ <span>＋</span></summary><p>オペレーション設計から運用まで一貫して対応可能です。内製化を前提に「仕組みだけ」支援する形も可能です。</p></details>
+    <details><summary>成果が出るまでどれくらいかかりますか？ <span>＋</span></summary><p>領域により異なりますが、まず1ヶ月で「型」を作り、2〜3ヶ月で改善サイクルを回す設計が現実的です。</p></details>
+    <details><summary>契約期間の縛りはありますか？ <span>＋</span></summary><p>原則は月次更新を前提に設計できます。業務の性質上、初期設計フェーズ（1〜2ヶ月）を推奨します。</p></details>
+  </div>
+</div>
+</section>
+<!-- ===== CONTACT ===== -->
+<section class="contact-sec" id="contact">
+<div class="wrap">
+  <div class="en-label">CONTACT</div>
+  <h2>アクセルを踏むための<br class="sp-br">"作戦会議"を<br>始めませんか？</h2>
+  <p>課題整理・概算費用・<br class="sp-br">導入ステップを<br class="sp-br">30分で整理します。</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+    <a class="btn btn-primary" href="mailto:info@aikasu.jp?subject=AIKASU無料相談希望&body=【会社名】%0D%0A【お名前】%0D%0A【ご相談テーマ】%0D%0A【現状の課題】%0D%0A" style="box-shadow:0 6px 20px rgba(47,107,255,.35)">お問い合わせ →</a>
+    <a class="btn btn-ghost" href="#download" id="download">資料を受け取る →</a>
+  </div>
+</div>
+</section>
+<!-- ===== FOOTER ===== -->
+<footer>
+<div class="wrap">
+<div class="footer-inner">
+  <div>
+    <div style="font-weight:900;color:var(--ink);margin-bottom:6px;font-size:14px">株式会社AIKASU</div>
+    <div class="footer-info">
+      <div>代表取締役 長田政也</div>
+      <div>福岡県福岡市南区高宮3丁目7-3 アクアマリン高宮302号</div>
+      <div>Email：info@aikasu.jp</div>
+      <div style="margin-top:6px"><a href="https://aikasu.jp/company" target="_blank" rel="noopener noreferrer">会社概要ページ →</a></div>
     </div>
   </div>
+  <nav class="footer-nav">
+    <a href="#who">WHO WE ARE</a><a href="#business">BUSINESS</a><a href="#achievement">ACHIEVEMENT</a><a href="#talent-pool">TALENT POOL</a><a href="#company">COMPANY</a><a href="#contact">CONTACT</a>
+  </nav>
+</div>
+<div style="text-align:center;margin-top:24px;color:var(--sub);font-size:11px">© AIKASU. All rights reserved.</div>
+</div>
+</footer>
+<!-- ===== MOBILE CTA ===== -->
+<div class="mobile-cta">
+  <a class="mcta mcta-p" href="#contact">無料相談</a>
+  <a class="mcta mcta-g" href="#download">資料DL</a>
+</div>
+<script>
+/* ===== DATA ===== */
+const content={
+  cases:[
+    {title:"執行役員制度の廃止",industry:"製造メーカー",summary:"事業承継を見据えた後任チームの組成",challenge:"経営チームへの不信感から経営権を渡せず、承継が停滞。",approach:"社内調査で不正発覚。9名の執行役員制度を廃止し新幹部体制を構築。人事制度刷新と経営会議の透明性を推進。",result:"売上113%成長（34億→41億）",period:"12か月",categories:["productivity","value"],image:"https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&h=400&q=80"},
+    {title:"組織のスクラッチアンドビルド",industry:"ガス会社",summary:"次世代リーダーの発掘",challenge:"30年間、社長自身で事業を推進するしかなく、事業を一任できる存在が不在。挑戦風土が薄まり組織が硬直。",approach:"部門長会議の運営、部門長以外との1:1、課題設定と進捗確認。",result:"2名のリーダー候補を発掘",period:"6カ月",categories:["productivity"],image:"https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&h=400&q=80"},
+    {title:"組織改革",industry:"営業会社",summary:"V字回復のための生産性向上",challenge:"中核人材の退職時に10名以上がまとめて退職。組織崩壊により業績が急落。",approach:"営業マニュアル作成、オンボーディング設計、評価制度の策定、営業商材の拡張。",result:"年商 3億→1.2億→6.2億",period:"24か月",categories:["productivity","cost"],image:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=400&q=80"},
+    {title:"経営方針の抜本的改善",industry:"印刷会社",summary:"事業承継を見据えた経営改善",challenge:"赤字体質の脱却が急務。何からどう変えればいいか検討がつかない状態。",approach:"経営分析、新商材検討、利益差分の把握、サービスのラベル分け、事業ポートフォリオと組織図の見直し。",result:"5年間赤字→黒字300万",period:"24か月",categories:["cost","newbiz"],image:"https://images.unsplash.com/photo-1504711434969-e33886168d68?auto=format&fit=crop&w=800&h=400&q=80"},
+    {title:"管理会計システムの構築",industry:"インフラ会社",summary:"管理会計の整備と見える化",challenge:"C/FもP/L管理もなく、営業に目標の概念がない。2か月後にしか結果が見えない状態。",approach:"KGI→KSF→KPI→KDIとブレイクダウンし目標設定。管理システムを構築し見える化・見せる化を推進。",result:"予実管理が自走しブレなく運用",period:"7カ月",categories:["productivity"],image:"https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=400&q=80"},
+    {title:"UX向上によるLTV向上とCPA低下",industry:"人材会社",summary:"ユーザー体験アップデートによるブランド向上",challenge:"電話やメールでの面談設定効率が悪く、CPAが高騰。1人あたりの生産性が右肩下がり。",approach:"顧客リストをLINEに移行させ、CRMとして機能するよう設計。",result:"CSチーム16名分の業務を自動化",period:"2カ月",categories:["productivity","cost"],image:"https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&h=400&q=80"},
+    {title:"オペレーションの外注化",industry:"人材会社",summary:"CRM運用と配信設計の代行",challenge:"電話やメールでの面談設定効率が悪く、CPAが高騰。生産性が右肩下がり。",approach:"LINEへ移行しCRM運用。毎月の配信設計・クリエイティブ制作から分析・PDCA会議の運営を代行。",result:"毎月120名の面談設定を自動化",period:"4か月〜",categories:["productivity"],image:"https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&h=400&q=80"},
+    {title:"経営者交代後のPMI",industry:"化粧品メーカー",summary:"社長交代後のPMI",challenge:"社長交代で組織に歪み。ブランドのピークアウトと重なり業績が急降下。赤字体質の中で早期改善が急務。",approach:"事業と組織のスクラッチアンドビルドを実施。",result:"ブランド運営が右肩上がりに改善",period:"8か月",categories:["productivity","value"],image:"https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&h=400&q=80"},
+    {title:"コロナ後の経営改善",industry:"飲食店",summary:"自立型組織づくりと収益改善",challenge:"コロナによる売上減少と原材料高騰。業務効率化とコスト管理による収益改善が課題。",approach:"組織マネジメント向上、3C/4P/SWOT分析、PDCA導入、人事評価制度再構築、採用力強化、メニュー刷新。",result:"管理職の経営当事者意識を醸成",period:"12か月",categories:["cost","productivity"],image:"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&h=400&q=80"},
+    {title:"バリュエーション向上",industry:"コンサルティング会社",summary:"社長依存体質からの脱却",challenge:"社長がすべての組織体制。業務標準化が進まず、社長の営業力が売上の限界に。",approach:"PMIに関する全業務を担当。社長交代を行い自ら代表就任。クライアント開拓の戦略策定から実行まで。",result:"バリュエーション4倍",period:"18カ月",categories:["value"],image:"https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=400&q=80"},
+    {title:"M&A戦略策定と実行",industry:"不動産業",summary:"企業価値最大化と売却実行",challenge:"売買事業が社長依存でバリュエーションが低評価。ロックアップ期間も長く設定されるリスク。",approach:"企業価値最大化へ事業構造を再設計し、M&A準備を実行。",result:"9カ月後に希望価格以上で売却成功",period:"9か月",categories:["value"],image:"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&h=400&q=80"}
+  ],
+  talentPool:[
+    {name:"KININARU INTERNSHIP",image:"images/kininaru-internship.png",description:"地方学生が戦闘力を上げられる有償インターンシップ。短期（ワークショップ型）と中長期（実務経験型）の2種類。",meaning:"実働体験を通じた人材の見極めと母集団形成",position:"母集団形成"},
+    {name:"KININARU WORKS",image:"images/kininaru-works.png",description:"新卒・中途ともにキャリアアドバイザーが伴走型でサポート。集合研修・勉強会からキャリアプラン策定、書類添削・面接対策まで対応。",meaning:"キャリアに向き合った人材の紹介・マッチング",position:"育成・実働"},
+    {name:"KININARU CAREER",image:"images/kininaru-career.png",description:"転職前後のリアルなキャリア情報にフォーカスしたオンラインキャリアマガジン。キャリア遍歴・転職の決め手・実務内容を掲載。",meaning:"転職候補者と人事双方への学びと気づきの提供",position:"実働・定着"}
+  ],
+  news:[
+    {title:"当社代表がグロービス変革クラブで登壇いたしました",media:"AIKASU",date:"2025.10.16",cat:"EVENT",url:"https://aikasu.jp/F2Q6qXjh/H-cOAKzy",image:"https://storage.googleapis.com/studio-cms-assets/projects/XKOkgbJPO4/s-406x257_webp_5c79a189-ac07-4f89-be63-be793b153a75.png"},
+    {title:"「熊本人材不足解決展」に登壇",media:"熊本人材不足解決展",date:"2025.08.28",cat:"EVENT",url:"https://kakushin.lbose.co.jp/exhibition02",image:"https://storage.googleapis.com/production-os-assets/assets/974d0587-b713-473b-911f-d08bc1266246"},
+    {title:"就活支援イベント「ThanksJobsフェス」を熊本で初開催",media:"PR TIMES",date:"2025.08.25",cat:"EVENT",url:"https://prtimes.jp/main/html/rd/p/000000004.000155255.html",image:"https://prtimes.jp/data/corp/155255/ogp/24eefdd16ed4f1715a874396665ad350-3c600162739cfc9b5bf921a1aa5e304d.png"},
+    {title:"「共感」と「行動」を生み出すブランド戦略セミナーに登壇",media:"マクロジ",date:"2024.08.27",cat:"SEMINAR",url:"https://maclogi.co.jp/seminar/3480/",image:"https://maclogi.co.jp/wp/wp-content/uploads/2024/07/can_0827_3.jpg"},
+    {title:"カルテットコミュニケーションズがMARKELINKを子会社化",media:"PR TIMES",date:"2024.09.12",cat:"PRESS",url:"https://prtimes.jp/main/html/rd/p/000000028.000059024.html",image:"https://prtimes.jp/data/corp/59024/ogp/tmp-d2981ffe4cae62356dd2c14c180c43f4-ec0e1e26bfab7dc6928b7adde5b56f7d.jpg"},
+    {title:"株式会社ステージングアップ沖縄 経営人材育成支援事例",media:"リデプロ",date:"2023.07.03",cat:"CASE",url:"https://redeoki.com/case01/",image:"https://redeoki.com/wp-content/themes/redepro2/img/top/detail-1.jpg"},
+    {title:"事業承継課題を抱える中小企業のリアルとこれから",media:"知的財産教育協会",date:"2022.10.11",cat:"SEMINAR",url:"https://ip-edu.org/renkeiseminer20221011",image:"https://ip-edu.org/library/images/photo/masaya.nagata.jpg"},
+    {title:"経営承継アドバイザー認定者 実例セミナー",media:"PR TIMES / TAC",date:"2022.07.27",cat:"SEMINAR",url:"https://prtimes.jp/main/html/rd/p/000000786.000021078.html",image:"https://prtimes.jp/data/corp/21078/ogp/tmp-fb421e4f11ba93bbd243891773058725-23c545c06b9d71014a75b6749ced0df5.jpg"},
+    {title:"事業承継の支援を通して、地方の仕事を守り、地元を守る。",media:"日本金融人材育成協会",date:"2022.07.21",cat:"INTERVIEW",url:"https://www.kigyou-keiei.jp/voice/ms_adv/264483",image:"https://www.kigyou-keiei.jp/wp/wp-content/uploads/2022/07/keiei_syoukei_1.jpg"}
+  ]
+};
+const catMap={value:{label:"付加価値向上"},cost:{label:"コスト最適化"},market:{label:"商圏拡張"},newbiz:{label:"新規事業"},productivity:{label:"生産性向上"}};
 
-  <!-- 3. PROBLEM -->
-  <section class="section" id="problem">
-    <div class="container">
-      <p class="section-label">Problem</p>
-      <h2 class="section-headline">地方には、努力が報われない<br class="pc">会社が多すぎる。</h2>
-      <div class="problem__grid">
-        <div class="problem__body">
-          <p>良い商品がある。真面目に働いている。地域に必要とされている。</p>
-          <p>それでも、会社は静かに止まっていく。</p>
-          <p>理由はシンプルだ。構造が、時代に合っていない。</p>
-        </div>
-        <ul class="problem__list">
-          <li><span class="problem__list-num">01</span>採用しても定着しない</li>
-          <li><span class="problem__list-num">02</span>利益率が上がらない</li>
-          <li><span class="problem__list-num">03</span>社長に業務が集中する</li>
-          <li><span class="problem__list-num">04</span>属人化して再現性がない</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- 4. PHILOSOPHY -->
-  <section class="philosophy" id="philosophy">
-    <div class="container">
-      <div class="philosophy__inner">
-        <p class="section-label">Philosophy</p>
-        <h2 class="section-headline">私たちは、人を増やす前に、<br class="pc">構造を変える。</h2>
-        <div class="philosophy__lines">
-          <p>人が足りないのではない。</p>
-          <p>能力がないのでもない。</p>
-          <p>人が活きない設計になっているだけ。</p>
-        </div>
-        <p class="philosophy__reframe">AIKASUは「人に頼らない経営」をつくる会社です。</p>
-        <span class="philosophy__reframe-line"></span>
-        <div class="btn-group btn-group--center" style="margin-top:48px;">
-          <a href="https://lin.ee/589jqjwp" class="btn btn-line" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            LINEで無料相談する
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. TWO AXES -->
-  <section class="section section--alt" id="axes">
-    <div class="container">
-      <p class="section-label">Framework</p>
-      <h2 class="section-headline">勝ち方と、あり方。<br class="pc">どちらが欠けても会社は止まる。</h2>
-      <div class="axes__grid">
-        <div class="axes__col axes__col--win">
-          <p class="axes__col-label">Structure</p>
-          <h3 class="axes__col-title">勝ち方</h3>
-          <ul><li>どこで利益を出すか</li><li>どこを削ぎ落とすか</li><li>誰がやるべきで、誰がやらないか</li></ul>
-        </div>
-        <div class="axes__col">
-          <p class="axes__col-label">Mindset</p>
-          <h3 class="axes__col-title">あり方</h3>
-          <ul><li>どんな覚悟で働くか</li><li>何を評価するか</li><li>何をやらないか</li></ul>
-        </div>
-      </div>
-      <p class="axes__closing">この2つを揃えることが、経営の再設計だ。</p>
-    </div>
-  </section>
-
-  <!-- 6. SERVICES -->
-  <section class="section" id="services">
-    <div class="container">
-      <p class="section-label">Services</p>
-      <h2 class="section-headline">AIKASUがやっていること</h2>
-      <p class="section-sub">思想だけでは変わらない。手を動かし、成果が出る形に整える。</p>
-      <div class="services__grid">
-        <div class="services__card"><div class="services__card-num">01</div><h3 class="services__card-title">事業・業務構造の<br class="pc">再設計</h3><p class="services__card-desc">勝てる形に分解し直す。利益構造・業務フロー・組織設計を再整理。</p></div>
-        <div class="services__card"><div class="services__card-num">02</div><h3 class="services__card-title">マインドセットの<br class="pc">再定義</h3><p class="services__card-desc">あり方を揃え、評価を揃える。幹部の視座統一から行動指針の言語化まで。</p></div>
-        <div class="services__card"><div class="services__card-num">03</div><h3 class="services__card-title">構造に合う人材の<br class="pc">接続</h3><p class="services__card-desc">活きる配置だけをつくる。必要なら採用・派遣まで一気通貫で対応。</p></div>
-      </div>
-      <p class="services__note">※ 紹介しない判断も含めた「設計責任」を持ちます。</p>
-      <div class="btn-group btn-group--center" style="margin-top:32px;">
-        <a href="https://lin.ee/589jqjwp" class="btn btn-outline" target="_blank" rel="noopener">長田と30分、壁打ちする</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. CASE STUDIES -->
-  <section class="section section--alt" id="cases">
-    <div class="container">
-      <p class="section-label">Case Studies</p>
-      <h2 class="section-headline">構造を変えると、<br class="pc">結果はあとからついてくる。</h2>
-      <p class="section-sub">業種もフェーズも異なる企業が、構造の再設計で変わっていく。</p>
-      <div class="cases__grid">
-        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80&auto=format" alt="化粧品" loading="lazy"><div class="case-card__body"><span class="case-card__tag">化粧品業</span><h3 class="case-card__title">業務が社長に集中。組織の役割を再設計し、現場が自走する体制へ。</h3><p class="case-card__desc">社長がすべての判断を行い、現場が停滞。業務フローと役割分担を再構築し、管理職が意思決定できる組織に転換。</p><div class="case-card__result">社長の業務負荷60%削減</div></div></div>
-        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80&auto=format" alt="飲食店" loading="lazy"><div class="case-card__body"><span class="case-card__tag">飲食業</span><h3 class="case-card__title">離職率80%超。マインドセット研修と評価制度で定着率を劇的改善。</h3><p class="case-card__desc">スタッフが入っても半年で辞める悪循環。評価基準を言語化し、リーダー育成を実施。あり方を揃えることで組織が安定。</p><div class="case-card__result">離職率 80% → 10%</div></div></div>
-        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1562408590-e32931084e23?w=600&q=80&auto=format" alt="印刷" loading="lazy"><div class="case-card__body"><span class="case-card__tag">印刷業</span><h3 class="case-card__title">赤字体質から黒字化。構造改善で従業員の給与も2割UP。</h3><p class="case-card__desc">慢性的な赤字が続く中、収益構造と業務フローを再設計。不採算を整理し、利益が残る構造に転換。従業員還元まで実現。</p><div class="case-card__result">赤字→黒字化・給与2割UP</div></div></div>
-        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&auto=format" alt="不動産" loading="lazy"><div class="case-card__body"><span class="case-card__tag">不動産業</span><h3 class="case-card__title">構造再設計から事業売却まで。ロックアップ半年での会社売却を成功。</h3><p class="case-card__desc">売上はあるのに利益が残らない状態。事業構造を再設計し、企業価値を最大化。ロックアップ期間半年でのM&amp;Aを実現。</p><div class="case-card__result">ロックアップ半年で売却成功</div></div></div>
-        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80&auto=format" alt="コンサルティング" loading="lazy"><div class="case-card__body"><span class="case-card__tag">コンサルティング業</span><h3 class="case-card__title">社長依存体制を脱却。経営代行し、1年半で最高業績を達成。</h3><p class="case-card__desc">社長がいなければ回らない構造を解消。経営代行として入り込み、組織と仕組みを再構築。過去最高業績を更新。</p><div class="case-card__result">1年半で過去最高業績</div></div></div>
-        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80&auto=format" alt="IT" loading="lazy"><div class="case-card__body"><span class="case-card__tag">IT・Web</span><h3 class="case-card__title">急成長フェーズの組織崩壊を防止。経営幹部の視座を統一。</h3><p class="case-card__desc">急拡大で組織が分断。幹部間の方針のズレを可視化し、マインドセット研修で経営チームを再構築。</p><div class="case-card__result">幹部離職ゼロ・意思決定2倍</div></div></div>
-        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&q=80&auto=format" alt="小売店" loading="lazy"><div class="case-card__body"><span class="case-card__tag">小売業</span><h3 class="case-card__title">多店舗展開で品質がバラバラに。オペレーション統一で再現性を確保。</h3><p class="case-card__desc">店舗ごとに運営品質が異なり顧客満足度が低下。業務標準化と評価体制の統一で、どの店舗でも同じ品質を実現。</p><div class="case-card__result">顧客満足度スコア35%向上</div></div></div>
-        <div class="case-card"><img class="case-card__img" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80&auto=format" alt="営業" loading="lazy"><div class="case-card__body"><span class="case-card__tag">営業代理業</span><h3 class="case-card__title">組織崩壊・業績ピークアウトから、事業拡大へ。営業利益6倍に。</h3><p class="case-card__desc">組織が崩壊し業績がピークアウト。構造を再設計し、事業拡大と営業利益の大幅改善を同時に実現。</p><div class="case-card__result">事業拡大・営業利益6倍</div></div></div>
-      </div>
-      <div class="cases__more"><a href="https://aikasu.jp/case" class="btn btn-outline" target="_blank" rel="noopener">すべての改善事例を見る</a></div>
-      <div class="btn-group btn-group--center" style="margin-top:24px;">
-        <a href="https://lin.ee/589jqjwp" class="btn btn-line" target="_blank" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-          自社に近い事例を相談する
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. WHY AIKASU -->
-  <section class="section" id="why">
-    <div class="container">
-      <p class="section-label">Why AIKASU</p>
-      <h2 class="section-headline">なぜ、AIKASUに<br class="pc">相談が集まるのか。</h2>
-      <div class="why__list">
-        <div class="why__item"><span class="why__item-num">01</span><div><h3 class="why__item-title">福岡・熊本を中心とした経営者ネットワーク</h3><p class="why__item-desc">地域に根ざした信頼関係と、経営者同士のつながりから生まれる紹介が大半。</p></div></div>
-        <div class="why__item"><span class="why__item-num">02</span><div><h3 class="why__item-title">地方での事業運営の力学の理解</h3><p class="why__item-desc">都市部と違い、地域の中でのお作法、人間関係、従業員の人材レベルなどを理解した上で制約を捉え、改善計画の立案から実行までをワンストップで支援。</p></div></div>
-        <div class="why__item"><span class="why__item-num">03</span><div><h3 class="why__item-title">人材活用の代行ジャッジ</h3><p class="why__item-desc">既存社員を活用してより利益を生み出す体制をつくるための配置、目標設定等のジャッジメントを代行支援。勝てる仕組みづくりを代行。</p></div></div>
-        <div class="why__item"><span class="why__item-num">04</span><div><h3 class="why__item-title">設計責任を持つ</h3><p class="why__item-desc">紹介して終わりではない。回り続ける状態まで設計する責任を持つ。</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. MESSAGE -->
-  <section class="founder" id="founder">
-    <div class="founder__grid">
-      <div class="founder__photo">
-        <img src="ChatGPT Image 2026年2月15日 23_07_46.png" alt="代表 長田" loading="lazy">
-      </div>
-      <div class="founder__content">
-        <p class="section-label" style="color:rgba(255,255,255,.3);">Message</p>
-        <div class="founder__name-block">
-          <p class="founder__role">株式会社AIKASU 代表取締役</p>
-          <p class="founder__name">長田政也 <span style="font-weight:300;font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,.35);">Nagata Masaya</span></p>
-        </div>
-        <h2 class="founder__headline">一度、長田と<br class="pc">話してみませんか？</h2>
-        <div class="founder__body">
-          <p>地方企業が廃業し、雇用がなくなる瞬間を、何度も見てきました。</p>
-          <p>今までの延長戦の努力では生き残れません。<br class="pc">まだ余裕があるうちに、先手を打つことで業績をよくする流れをつくりましょう。</p>
-          <p>ビジネスモデル、業務オペレーション、そして働くメンバーのマインド。<br class="pc">良くするために変化させる必要がある。<br class="pc">だけど社内からだけではうまくいかない。<br class="pc">外からだからできる改革があります。</p>
-          <p>まずは気軽に事例を聞くことや、当社の実力を知ることから初めてみてください。<br class="pc">必要があれば、貴社のことをお聞かせください。<br class="pc">勝つために、一緒に変わる挑戦をしましょう。</p>
-        </div>
-        <div class="btn-group">
-          <a href="https://lin.ee/589jqjwp" class="btn btn-line" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            LINEで無料相談する
-          </a>
-          <a href="https://lin.ee/589jqjwp" class="btn btn-outline-white" target="_blank" rel="noopener">長田と30分、壁打ちする</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10. FAQ -->
-  <section class="section" id="faq">
-    <div class="container--narrow">
-      <p class="section-label">FAQ</p>
-      <h2 class="section-headline">よくある質問</h2>
-      <div class="faq__list">
-        <div class="faq__item"><button class="faq__question" aria-expanded="true"><span class="faq__question-num">Q1</span>費用感はどのくらいですか？</button><div class="faq__answer"><p>まずは現状と目的を伺い、必要な範囲（設計〜実行〜採用）で提案します。単発の壁打ちから可能です。</p></div></div>
-        <div class="faq__item"><button class="faq__question" aria-expanded="false"><span class="faq__question-num">Q2</span>人材紹介だけお願いできますか？</button><div class="faq__answer" style="display:none;"><p>可能です。ただし、構造上ミスマッチが起きる場合は「紹介しない」提案も行います。</p></div></div>
-        <div class="faq__item"><button class="faq__question" aria-expanded="false"><span class="faq__question-num">Q3</span>まず何から始めますか？</button><div class="faq__answer" style="display:none;"><p>最初に「どこで利益を出すか」「何を削るか」「誰がやるか」を再定義し、止まらない形の優先順位を決めます。</p></div></div>
-        <div class="faq__item"><button class="faq__question" aria-expanded="false"><span class="faq__question-num">Q4</span>オンラインで相談できますか？</button><div class="faq__answer" style="display:none;"><p>可能です。LINE登録後、日程を調整します。</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 11. FINAL CTA -->
-  <section class="final-cta" id="final-cta">
-    <div class="container">
-      <h2>構造を変える第一歩は、<br class="pc">30分の壁打ちから。</h2>
-      <p>無料・秘密厳守。経営の現状を整理し、止まらないための優先順位を一緒に決めます。</p>
-      <a href="https://lin.ee/589jqjwp" class="btn btn-line" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        LINEで無料相談する
-      </a>
-      <p class="final-cta__note">※ 登録後すぐに日程調整が可能です</p>
-    </div>
-  </section>
-
-  <footer class="footer"><div class="container"><p>&copy; AIKASU Inc. All rights reserved.</p></div></footer>
-
-  <!-- STICKY CTA -->
-  <div class="sticky-cta" id="stickyCta">
-    <a href="https://lin.ee/589jqjwp" class="btn btn-line" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.626.626 0 01-.199.031c-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.62.62 0 01.194-.033c.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-      LINEで無料相談する
-    </a>
-  </div>
-
-  <script>
-    document.querySelectorAll('.faq__question').forEach(function(btn){btn.addEventListener('click',function(){var a=this.nextElementSibling;var o=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',String(!o));a.style.display=o?'none':'block';});});
-    var sc=document.getElementById('stickyCta'),hs=document.getElementById('hero');
-    if(sc&&hs){new IntersectionObserver(function(e){e.forEach(function(en){sc.style.display=en.isIntersecting?'none':'block';});},{threshold:0}).observe(hs);}
-  </script>
+/* ===== RENDER: News (top 3) ===== */
+function renderNews(){
+  var el=document.getElementById("newsList"),h="";
+  content.news.slice(0,3).forEach(function(n){
+    h+='<a class="news-row" href="'+n.url+'" target="_blank" rel="noopener noreferrer">';
+    h+='<span class="news-date">'+n.date+'</span>';
+    h+='<span class="news-cat">'+n.cat+'</span>';
+    h+='<span class="news-title">'+n.title+'</span>';
+    h+='</a>';
+  });
+  el.innerHTML=h;
+}
+/* ===== RENDER: Achievement ===== */
+function renderAch(){
+  var tabs=document.getElementById("achTabs");
+  var h='<button class="ach-tab active" data-cat="all">すべて</button>';
+  Object.keys(catMap).forEach(function(k){h+='<button class="ach-tab" data-cat="'+k+'">'+catMap[k].label+'</button>'});
+  tabs.innerHTML=h;
+  tabs.querySelectorAll(".ach-tab").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      tabs.querySelectorAll(".ach-tab").forEach(function(b){b.classList.remove("active")});
+      btn.classList.add("active");renderAchCards(btn.dataset.cat);
+    });
+  });
+  renderAchCards("all");
+}
+function renderAchCards(cat){
+  var g=document.getElementById("achGrid"),h="";
+  content.cases.forEach(function(c){
+    var show=cat==="all"||c.categories.indexOf(cat)!==-1;
+    var tags=c.categories.map(function(k){return'<span class="ach-tag">'+(catMap[k]?catMap[k].label:k)+'</span>'}).join("");
+    h+='<div class="ach-card" style="display:'+(show?"flex":"none")+'" data-cats="'+c.categories.join(",")+'">';
+    if(c.image)h+='<img class="ach-card-img" src="'+c.image+'" alt="'+c.title+'" loading="lazy" onerror="this.outerHTML=\'<div class=ach-card-img-ph>'+c.industry+'</div>\'">';
+    h+='<div class="ach-card-body">';
+    h+='<div class="ach-cats">'+tags+'</div>';
+    h+='<div class="ach-title">'+c.title+'</div>';
+    h+='<div class="ach-meta"><span>'+c.industry+'</span><span class="ach-period">'+c.period+'</span></div>';
+    h+='<div class="ach-result">'+c.result+'</div>';
+    h+='<div class="ach-detail"><strong>課題：</strong>'+c.challenge+'<br><strong>施策：</strong>'+c.approach+'</div>';
+    h+='</div></div>';
+  });
+  g.innerHTML=h;
+}
+/* ===== RENDER: TO WIN PROJECT ===== */
+function renderTWP(){
+  var g=document.getElementById("twpGrid"),h="";
+  var top5=content.cases.filter(function(c){return c.result.match(/[0-9０-９%％倍]/)}).slice(0,5);
+  if(top5.length<5)top5=content.cases.slice(0,5);
+  top5.forEach(function(c,i){
+    h+='<div class="twp-card">';
+    h+='<div class="twp-cell"><div class="twp-cell-label">CHALLENGE</div><div class="twp-cell-val">'+c.industry+'<br>'+c.challenge+'</div></div>';
+    h+='<div class="twp-cell"><div class="twp-cell-label">STRATEGY</div><div class="twp-cell-val">'+c.approach+'</div></div>';
+    h+='<div class="twp-cell"><div class="twp-cell-label">RESULT</div><div class="twp-cell-val"><strong>'+c.result+'</strong></div></div>';
+    h+='</div>';
+  });
+  g.innerHTML=h;
+}
+/* ===== RENDER: Talent Pool ===== */
+function renderTP(){
+  var el=document.getElementById("talentGrid"),h="";
+  content.talentPool.forEach(function(t){
+    h+='<div class="tp-card">';
+    if(t.image)h+='<img src="'+t.image+'" alt="'+t.name+'" onerror="this.outerHTML=\'<div class=tp-ph>'+t.name+'</div>\'">';
+    h+='<div class="tp-body"><h3>'+t.name+'</h3>';
+    h+='<p class="tp-desc">'+t.description+'</p>';
+    h+='<p class="tp-meaning"><b>企業にとっての意味：</b>'+t.meaning+'</p>';
+    h+='<div class="tp-pos">'+t.position+'</div></div></div>';
+  });
+  el.innerHTML=h;
+}
+/* ===== RENDER: Past Works ===== */
+function renderPW(){
+  var track=document.getElementById("pwTrack"),h="";
+  content.news.forEach(function(n){
+    h+='<a class="pw-card" href="'+n.url+'" target="_blank" rel="noopener noreferrer">';
+    if(n.image)h+='<img class="pw-card-img" src="'+n.image+'" alt="" loading="lazy" onerror="this.outerHTML=\'<div class=pw-card-img-ph>'+n.media+'</div>\'">';
+    else h+='<div class="pw-card-img-ph">'+n.media+'</div>';
+    h+='<div class="pw-card-body">';
+    h+='<span class="pw-media">'+n.media+'</span><span class="pw-date">'+n.date+'</span>';
+    h+='<h4>'+n.title+'</h4>';
+    h+='<span class="pw-link">開く →</span></div></a>';
+  });
+  track.innerHTML=h;
+  document.getElementById("pwPrev").addEventListener("click",function(){track.scrollBy({left:-300,behavior:"smooth"})});
+  document.getElementById("pwNext").addEventListener("click",function(){track.scrollBy({left:300,behavior:"smooth"})});
+  var isDown=false,startX,scrollL;
+  track.addEventListener("mousedown",function(e){isDown=true;startX=e.pageX-track.offsetLeft;scrollL=track.scrollLeft});
+  track.addEventListener("mouseleave",function(){isDown=false});
+  track.addEventListener("mouseup",function(){isDown=false});
+  track.addEventListener("mousemove",function(e){if(!isDown)return;e.preventDefault();track.scrollLeft=scrollL-(e.pageX-track.offsetLeft-startX)});
+}
+/* ===== INIT ===== */
+renderNews();renderAch();renderTWP();renderTP();renderPW();
+document.querySelectorAll("details").forEach(function(d){var s=d.querySelector("summary span");var set=function(){if(s)s.textContent=d.open?"－":"＋"};set();d.addEventListener("toggle",set)});
+</script>
+<!--
+===== CHECKLIST =====
+[x] solu同型セクション順: HERO > NEWS > WHO WE ARE > BUSINESS > WINNING MODEL > ACHIEVEMENT > TO WIN PROJECT > TALENT POOL > COMPANY > PAST WORKS > ROI > FAQ > CONTACT
+[x] 英字ラベル全セクション: NEWS / WHO WE ARE? / BUSINESS / WINNING MODEL / ACHIEVEMENT / TO WIN PROJECT / TALENT POOL / COMPANY / PAST WORKS / ROI / FAQ / CONTACT
+[x] 番号UI: BUSINESS (01-05) / WINNING MODEL (01-03)
+[x] 配色統一: --ink / --navy / --blue のみ。アクセント色なし
+[x] グラデなし / 影は box-shadow 不使用(border のみ)
+[x] Hero: 90vh / 巨大タイポ / SVG抽象ビジュアル / CTA 2ボタン
+[x] SP下部固定CTAバー: 無料相談 / 資料DL (980px以下)
+[x] 5分類タブ: 付加価値 / コスト / 商圏 / 新規事業 / 生産性
+[x] TO WIN PROJECT: 大型3列カード(CHALLENGE / STRATEGY / RESULT)
+[x] KININARU 3レイヤー + 採用接続ノート
+[x] PAST WORKS: scroll-snap カルーセル + ドラッグ + ※肩書注記
+[x] 外部リンク全て target="_blank" rel="noopener noreferrer"
+[x] レスポンシブ: PC(1080) / Tablet(980) / SP(520) 3ブレークポイント
+[x] FAQ: details/summary アコーディオン
+[x] CONTACT: 作戦会議コピー + mailto CTA
+[x] 画像ローカル参照 + onerror フォールバック
+[x] company: 長田政也 / 福岡市南区高宮 / info@aikasu.jp
+[x] 改行制御: .sp-br / .pc-br で PC/SP 別に改行を制御（計17箇所）
+[x] 宣言帯: 3箇所（人を入れても変わりません / 変えるべきはオペレーション / アクセルを踏むなら仕組みから）
+[x] 1画面1テーマ: SP padding 72px / statement 56px で各セクションが画面に収まる設計
+[x] 主張強化: WHO WE ARE を1行1文に分割、sec-desc を改行区切り、Hero sub を改行区切り
+[x] タイポ拡大: Hero h1 76px / sec-title 48px / who-big 52px / statement 52px
+=====
+-->
 </body>
 </html>
