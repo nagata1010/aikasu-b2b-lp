@@ -47,11 +47,14 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 /* ---- Hero ---- */
 .hero{min-height:100vh;background:radial-gradient(circle at 70% 30%,rgba(77,163,255,.35),transparent 40%),radial-gradient(circle at 30% 70%,rgba(47,107,255,.25),transparent 45%),#0A1E6A;color:#fff;display:flex;align-items:center;position:relative;overflow:hidden}
 .hero-inner{position:relative;z-index:2;width:100%}
-.hero-label{font-size:13px;font-weight:700;letter-spacing:.3em;color:rgba(255,255,255,.3);margin-bottom:56px;text-transform:uppercase}
-.hero-eng{font-size:clamp(56px,8.5vw,96px);font-weight:300;line-height:1.08;letter-spacing:.05em;margin-bottom:48px}
-.hero-eng span{display:block}
-.hero-jp{font-size:clamp(16px,1.8vw,22px);font-weight:400;color:rgba(255,255,255,.4);letter-spacing:.04em;line-height:1.9;margin-bottom:64px}
-.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-label{font-size:13px;font-weight:700;letter-spacing:.3em;color:rgba(255,255,255,.3);margin-bottom:64px;text-transform:uppercase}
+@keyframes heroIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-jp-main{font-size:clamp(42px,7.5vw,80px);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin:0 0 56px;text-shadow:0 0 60px rgba(77,163,255,.35),0 0 120px rgba(47,107,255,.15)}
+.hero-line{display:block;opacity:0;animation:heroIn .7s cubic-bezier(.22,1,.36,1) forwards}
+.hero-line:nth-child(1){animation-delay:.1s}
+.hero-line:nth-child(2){animation-delay:.6s}
+.hero-eng-sub{font-size:clamp(18px,2.5vw,28px);font-weight:300;color:rgba(255,255,255,.35);letter-spacing:.08em;line-height:1.5;margin-bottom:72px;opacity:0;animation:heroIn .7s cubic-bezier(.22,1,.36,1) 1.1s forwards}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:heroIn .7s cubic-bezier(.22,1,.36,1) 1.4s forwards}
 .btn-hero-accent{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 36px;font-weight:700;font-size:15px;cursor:pointer;transition:all .15s;font-family:inherit;background:var(--blue);color:#fff;border:none;box-shadow:none;white-space:nowrap}
 .btn-hero-accent:hover{opacity:.85;transform:translateY(-1px)}
 .btn-hero-outline{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 36px;font-weight:700;font-size:15px;cursor:pointer;transition:all .15s;font-family:inherit;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25);box-shadow:none;white-space:nowrap}
@@ -191,8 +194,8 @@ footer{padding:40px 0;font-size:12px;color:var(--sub);border-top:1px solid var(-
   .statement{padding:64px 0}
   .hero{min-height:92vh}
   .hero-label{margin-bottom:40px}
-  .hero-eng{font-size:clamp(40px,8vw,64px);margin-bottom:36px}
-  .hero-jp{margin-bottom:48px}
+  .hero-jp-main{font-size:clamp(36px,7vw,56px);margin-bottom:40px}
+  .hero-eng-sub{font-size:clamp(16px,2.5vw,22px);margin-bottom:56px}
   .nav{display:none}
   .top-cta .btn-secondary{display:none}
   .wm-grid,.co-grid,.tp-grid,.mvt-grid{grid-template-columns:1fr}
@@ -231,9 +234,9 @@ footer{padding:40px 0;font-size:12px;color:var(--sub);border-top:1px solid var(-
   .statement p{font-size:clamp(22px,6.5vw,34px);line-height:1.3}
   /* ---- Hero SP ---- */
   .hero{min-height:90vh}
-  .hero-label{font-size:11px;letter-spacing:.2em;margin-bottom:32px}
-  .hero-eng{font-size:clamp(36px,10vw,52px);letter-spacing:.03em;margin-bottom:28px}
-  .hero-jp{font-size:15px;margin-bottom:40px}
+  .hero-label{font-size:11px;letter-spacing:.2em;margin-bottom:28px}
+  .hero-jp-main{font-size:clamp(30px,8.5vw,44px);margin-bottom:28px;text-shadow:0 0 40px rgba(77,163,255,.3),0 0 80px rgba(47,107,255,.12)}
+  .hero-eng-sub{font-size:16px;letter-spacing:.05em;margin-bottom:40px}
   .hero-cta{flex-direction:column;gap:10px}
   .btn-hero-accent,.btn-hero-outline{width:100%;padding:14px 24px;font-size:14px;text-align:center}
   /* ---- News SP ---- */
@@ -328,8 +331,8 @@ footer{padding:40px 0;font-size:12px;color:var(--sub);border-top:1px solid var(-
 <div class="wrap">
 <div class="hero-inner">
   <div class="hero-label">Acceleration Ops</div>
-  <h1 class="hero-eng"><span>Operation First.</span><span>Human Second.</span></h1>
-  <p class="hero-jp">人材紹介では、<br>会社は変わりません。</p>
+  <h1 class="hero-jp-main"><span class="hero-line">人を増やしても、</span><span class="hero-line">会社は変わりません。</span></h1>
+  <p class="hero-eng-sub">Operation First.<br>Human Second.</p>
   <div class="hero-cta">
     <a class="btn-hero-accent" href="https://aikasu.jp/contact" target="_blank" rel="noopener noreferrer">無料相談はこちら →</a>
     <a class="btn-hero-outline" href="#business">事業内容を見る →</a>
