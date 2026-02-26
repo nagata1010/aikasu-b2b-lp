@@ -7,7 +7,7 @@
 <meta name="description" content="人口減少・人件費上昇の不可逆未来。AIKASUはオペレーション再構築から人材配置・教育・運用まで一貫して担う、企業のアクセルを踏むための外部組織です。"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--ink:#0B1020;--navy:#0B1F3B;--blue:#2F6BFF;--bg:#FFFFFF;--muted:#F5F7FB;--sub:#6B7394;--line:rgba(11,31,59,.14);--r:14px;--max:1080px}
@@ -45,14 +45,17 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 .nav a{padding:6px 10px;border-radius:8px;transition:color .12s}.nav a:hover{color:var(--ink)}
 .top-cta{display:flex;gap:8px}.top-cta .btn{padding:8px 18px;font-size:12px}
 /* ---- Hero ---- */
-.hero{min-height:92vh;background:var(--ink);color:#fff;display:flex;align-items:center;position:relative;overflow:hidden}
-.hero-inner{position:relative;z-index:2;max-width:700px}
-.hero-badge{display:inline-block;padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);font-weight:700;font-size:12px;letter-spacing:.06em;margin-bottom:40px}
-.hero h1{font-size:clamp(38px,7vw,76px);font-weight:900;line-height:1.08;letter-spacing:-.035em;margin-bottom:28px}
-.hero-sub{font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,.5);line-height:2;margin-bottom:48px}
-.hero-sub strong{color:rgba(255,255,255,.95)}
+.hero{min-height:100vh;background:radial-gradient(circle at 70% 30%,rgba(77,163,255,.35),transparent 40%),radial-gradient(circle at 30% 70%,rgba(47,107,255,.25),transparent 45%),#0A1E6A;color:#fff;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-inner{position:relative;z-index:2;width:100%}
+.hero-label{font-size:13px;font-weight:700;letter-spacing:.3em;color:rgba(255,255,255,.3);margin-bottom:56px;text-transform:uppercase}
+.hero-eng{font-size:clamp(56px,8.5vw,96px);font-weight:300;line-height:1.08;letter-spacing:.05em;margin-bottom:48px}
+.hero-eng span{display:block}
+.hero-jp{font-size:clamp(16px,1.8vw,22px);font-weight:400;color:rgba(255,255,255,.4);letter-spacing:.04em;line-height:1.9;margin-bottom:64px}
 .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
-.hero-svg{position:absolute;right:-20px;top:50%;transform:translateY(-50%);width:48%;max-width:560px;opacity:.35;z-index:1}
+.btn-hero-accent{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 36px;font-weight:700;font-size:15px;cursor:pointer;transition:all .15s;font-family:inherit;background:var(--blue);color:#fff;border:none;box-shadow:none;white-space:nowrap}
+.btn-hero-accent:hover{opacity:.85;transform:translateY(-1px)}
+.btn-hero-outline{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 36px;font-weight:700;font-size:15px;cursor:pointer;transition:all .15s;font-family:inherit;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25);box-shadow:none;white-space:nowrap}
+.btn-hero-outline:hover{border-color:rgba(255,255,255,.6);transform:translateY(-1px)}
 /* ---- News ---- */
 .news-list{display:flex;flex-direction:column;gap:0}
 .news-row{display:flex;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
@@ -186,9 +189,10 @@ footer{padding:40px 0;font-size:12px;color:var(--sub);border-top:1px solid var(-
 @media(max-width:980px){
   .sec{padding:88px 0}
   .statement{padding:64px 0}
-  .hero{min-height:88vh}.hero h1{font-size:clamp(32px,8vw,52px)}
-  .hero-sub{font-size:15px;line-height:2.2}
-  .hero-svg{display:none}
+  .hero{min-height:92vh}
+  .hero-label{margin-bottom:40px}
+  .hero-eng{font-size:clamp(40px,8vw,64px);margin-bottom:36px}
+  .hero-jp{margin-bottom:48px}
   .nav{display:none}
   .top-cta .btn-secondary{display:none}
   .wm-grid,.co-grid,.tp-grid,.mvt-grid{grid-template-columns:1fr}
@@ -226,11 +230,12 @@ footer{padding:40px 0;font-size:12px;color:var(--sub);border-top:1px solid var(-
   .statement{padding:48px 0}
   .statement p{font-size:clamp(22px,6.5vw,34px);line-height:1.3}
   /* ---- Hero SP ---- */
-  .hero{min-height:85vh}
-  .hero-badge{margin-bottom:24px;font-size:11px;padding:6px 14px}
-  .hero h1{font-size:clamp(30px,8.5vw,44px);margin-bottom:18px}
-  .hero-sub{font-size:14px;line-height:2;margin-bottom:32px}
-  .hero-cta{flex-direction:column;gap:10px}.hero-cta .btn{width:100%;padding:14px 24px;font-size:14px}
+  .hero{min-height:90vh}
+  .hero-label{font-size:11px;letter-spacing:.2em;margin-bottom:32px}
+  .hero-eng{font-size:clamp(36px,10vw,52px);letter-spacing:.03em;margin-bottom:28px}
+  .hero-jp{font-size:15px;margin-bottom:40px}
+  .hero-cta{flex-direction:column;gap:10px}
+  .btn-hero-accent,.btn-hero-outline{width:100%;padding:14px 24px;font-size:14px;text-align:center}
   /* ---- News SP ---- */
   .news-row{flex-wrap:wrap;gap:6px;padding:14px 0}
   .news-date{min-width:auto;font-size:11px}
@@ -322,29 +327,15 @@ footer{padding:40px 0;font-size:12px;color:var(--sub);border-top:1px solid var(-
 <section class="hero" id="top">
 <div class="wrap">
 <div class="hero-inner">
-  <div class="hero-badge">不可逆未来 × 仕組み先行 × 低リスク実行</div>
-  <h1>人材紹介では、<br>会社は<br class="sp-br">変わりません。</h1>
-  <div class="hero-sub">
-    人口は減り続ける。<br>
-    人件費は上がり続ける。<br>
-    <br>
-    必要なのは、人ではなく<br class="sp-br"><strong>"仕組みと実行"</strong>。
-  </div>
+  <div class="hero-label">Acceleration Ops</div>
+  <h1 class="hero-eng"><span>Operation First.</span><span>Human Second.</span></h1>
+  <p class="hero-jp">人材紹介では、<br>会社は変わりません。</p>
   <div class="hero-cta">
-    <a class="btn btn-primary" href="https://aikasu.jp/contact" target="_blank" rel="noopener noreferrer">無料相談はこちら →</a>
+    <a class="btn-hero-accent" href="https://aikasu.jp/contact" target="_blank" rel="noopener noreferrer">無料相談はこちら →</a>
+    <a class="btn-hero-outline" href="#business">事業内容を見る →</a>
   </div>
 </div>
 </div>
-<svg class="hero-svg" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M80 550L260 130" stroke="rgba(47,107,255,.2)" stroke-width="2"/>
-  <path d="M160 550L400 60" stroke="rgba(47,107,255,.35)" stroke-width="2.5"/>
-  <path d="M300 550L480 180" stroke="rgba(47,107,255,.15)" stroke-width="2"/>
-  <path d="M420 550L540 260" stroke="rgba(47,107,255,.1)" stroke-width="1.5"/>
-  <polygon points="400,60 391,88 409,88" fill="rgba(47,107,255,.35)"/>
-  <polygon points="260,130 251,158 269,158" fill="rgba(47,107,255,.2)"/>
-  <circle cx="400" cy="60" r="30" stroke="rgba(47,107,255,.18)" stroke-width="1.5" fill="none"/>
-  <circle cx="400" cy="60" r="55" stroke="rgba(47,107,255,.08)" stroke-width="1" fill="none"/>
-</svg>
 </section>
 <!-- ===== NEWS ===== -->
 <section class="sec" id="news">
